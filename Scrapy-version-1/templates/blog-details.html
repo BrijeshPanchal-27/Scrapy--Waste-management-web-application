@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Details Page || Scrapy || Waste Pickup Service HTML Template</title>
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicons/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'assets/images/favicons/site.webmanifest' %}">
+
+    <!-- plugins Styles -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yantramanav:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap-select.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/jquery.mCustomScrollbar.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/wastey-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+
+    <!-- template Styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+
+</head>
+
+<body>
+
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div><!-- /.preloader -->
+
+    <div class="page-wrapper">
+
+        <div class="topbar-one">
+            <div class="container">
+                <ul class="list-unstyled topbar-one__infos">
+                    <li class="topbar-one__select-box">
+                        <i class="wastey-icon-1"></i>
+                        <select class="selectpicker">
+                            <option value="branch-1">NewYork</option>
+                            <option value="branch-2">California</option>
+                            <option value="branch-3">Melbourn</option>
+                        </select>
+                    </li>
+                    <li>
+                        <i class="wastey-icon-2"></i>
+                        <h3>Main BRanch</h3>
+                        <p>654 Varick Str, BLN 11210</p>
+                    </li>
+                    <li>
+                        <i class="wastey-icon-3"></i>
+                        <h3>Mon - SUN</h3>
+                        <p>9.00am to 8.00pm</p>
+                    </li>
+                    <li>
+                        <i class="wastey-icon-4"></i>
+                        <h3><a href="tel:+800-456-78-901">+800 456 78 901</a></h3>
+                        <p><a href="mailto:info@junkbuster.com">info@junkbuster.com</a></p>
+                    </li>
+                </ul><!-- /.list-unstyled topbar-one__infos -->
+                <div class="topbar-one__right">
+                    <a class="sidecontent__toggler side-content__toggler" href="#"><i class="wastey-icon-5"></i></a>
+                </div><!-- /.topbar-one__right -->
+            </div><!-- /.container -->
+        </div><!-- /.topbar-one -->
+
+        <header class="header-one stricky">
+            <a href="#" class="topbar-one__toggler"><i class="far fa-angle-down"></i></a><!-- /.topbar-one__toggler -->
+            <div class="container">
+                <div class="header-one__logo">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'assets/images/logo-1-1.png' %}" alt="">
+                    </a>
+                    <span class="side-menu__toggler fa fa-bars"></span>
+                </div><!-- /.header-one__logo -->
+                <nav class="header-one__menu main-nav__main-navigation">
+                    <ul class="header-one__menu-list main-nav__navigation-box">
+                        <li class="dropdown">
+                            <a href="{% url 'home' %}">Home</a>
+
+                        </li><!-- /.dropdown -->
+                        <li class="dropdown">
+                            <a href="#">About</a>
+                            <ul>
+                                <li><a href="{% url 'our_story' %}">Our Story</a></li>
+                                <li><a href="{% url 'company_value' %}">Company Values</a></li>
+                                <li><a href="{% url 'team' %}">Team</a></li>
+                                <li><a href="{% url 'career' %}">Career</a></li>
+                            </ul>
+                        </li><!-- /.dropdown -->
+                        <li class="dropdown">
+                            <a href="{% url 'services' %}">Services</a>
+                            <ul>
+                                <li><a href="{% url 'services' %}">All Services</a></li>
+                                <li><a href = "{% url 'waste_removal' %}">Waste Removal</a></li>
+                                <li><a href="{% url 'rent_dumpster' %}">Dumpster Rentals</a></li>
+                                <li><a href="{% url 'on_demand' %}">On-Demand Collection</a></li>
+                                <li><a href="{% url 'zero_waste' %}">Zero Waste</a></li>
+                                <li><a href="{% url 'technology' %}">Technology</a></li>
+                            </ul>
+                        </li><!-- /.dropdown -->
+                        <li class="dropdown">
+                            <a href="{% url 'industries' %}">Industries</a>
+                            <ul>
+                                <li><a href="{% url 'industries' %}">All Industries</a></li>
+                                <li><a href="{% url 'industries_grocery' %}">Grocery Stores</a></li>
+                                <li><a href="{% url 'industries_medical' %}">Medical & Hospital</a></li>
+                                <li><a href="{% url 'industries_hotel' %}">Hotel & Restaurant</a></li>
+                                <li><a href="{% url 'industries_munci' %}">Municipalities</a></li>
+                                <li><a href="{% url 'industries_mall' %}">Mall & Theatre</a></li>
+                                <li><a href="{% url 'industries_stadium' %}">Stadium & Event</a></li>
+                            </ul>
+                        </li><!-- /.dropdown -->
+
+                        <li>
+                            <a href="{% url 'contact' %}">Contact</a>
+                        </li><!-- /.dropdown -->
+                        <li><a href="{% url 'pricing' %}">Pricing</a></li>
+<li><a href="{% url 'collectors' %}">Collectors</a></li>
+<li><a href="{% url 'orders' %}">Orders</a></li>
+                        <li class="has-dropdown">
+                            <a href="#" class="mx-2">Welcome {{request.user.username}}</a>
+                            <ul class="sub-menu">
+                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                            </ul>
+                        </li>
+
+                        {% else%}
+                        <li><a href="{% url 'register' %}">Register</a></li>
+                        <li><a href="{% url 'login' %}" class="mx-2">Login</a></li>
+                        {% endif %}
+                    </ul><!-- /.header-one__menu-list -->
+                </nav><!-- /.header-one__menu -->
+
+        </header><!-- /.header-one -->
+
+        <section class="page-header" style="background-image: url(assets/images/backgrounds/page-header-bg-1.jpg);">
+            <div class="container">
+                <h2 class="text-uppercase">Blog Details</h2>
+                <ul class="thm-breadcrumb list-unstyled">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li><span>Blog</span></li>
+                </ul><!-- /.thm-breadcrumb list-unstyled -->
+            </div><!-- /.container -->
+        </section><!-- /.page-header -->
+
+        <section class="blog-one blog-details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="blog-one__main blog-details__main">
+                            <div class="blog-one__single">
+                                <div class="blog-one__content">
+                                    <div class="blog-one__category">IN: <a href="#">Garbage Removal</a></div>
+                                    <!-- /.blog-one__category -->
+                                    <h3><a href="blog-details.html">Got Junk? Time For Dumpster Rental in Scrapy</a>
+                                    </h3>
+                                    <ul class="list-unstyled blog-one__meta">
+                                        <li>
+                                            <i class="far fa-calendar-alt"></i>
+                                            <span>Posted On</span>
+                                            <a href="blog-details.html">May 21st, 2021</a>
+                                        </li>
+                                        <li>
+                                            <i class="far fa-user-alt"></i>
+                                            <span>Posted By</span>
+                                            <a href="blog-details.html">Archer Corvin</a>
+                                        </li>
+                                        <li>
+                                            <i class="far fa-comment-alt"></i>
+                                            <span>Comments</span>
+                                            <a href="blog-details.html">03</a>
+                                        </li>
+                                    </ul><!-- /.list-unstyled blog-one__meta -->
+                                </div><!-- /.blog-one__content -->
+                                <div class="blog-details__image">
+                                    <img src="{% static 'assets/images/blog/blog-1-1.jpg" class="img-fluid" alt="">
+                                </div>
+                                <div class="blog-details__content">
+                                    <p><span class="letter-caps thm-black-bg">E</span> nouncing pleasure and praising
+                                        pain was born and I will give you a complete accounts of that
+                                        system, and expound the actual teachings of the great explorer of the truth, the
+                                        master-builder
+                                        of human happiness. No one rejects, dislikes, or avoids pleasure itself, because
+                                        it is pleasures, </p>
+                                    <p class="mt-0">but because those who do not know how to <span>pursue pleasure rationally encounter</span>
+                                        consequences that are
+                                        extremely painful. Nor again is there anyone who loves or pursues desires obtain
+                                        pain off itself, because
+                                        it is pain, <span>but because occasionally</span> circumstances occur.</p>
+                                    <p>How all this mistaken idea of denouncing pleasure & praising pain was born and
+                                        will give you completed
+                                        account of the system and expound the actual teachings of great explorer of the
+                                        truth the master-builder
+                                        of human happiness no one rejects, dislikes, or avoids pleasure itself because
+                                        it is pleasure, but because
+                                        those who do not know how to pursue pleasure.</p>
+                                    <blockquote>
+                                        <p>To take a trivial example, which of us ever undertakes laborious physical
+                                            exercise, except to obtain some advantage from it.</p>
+                                        <h4>Reggie Michael</h4>
+                                    </blockquote>
+                                    <p>Who loves or pursues or desires to obtain pain of itself, because it is pain, but
+                                        because that occasionally circumstances occur in which toil & pain can procures
+                                        him some great pleasure. To take a trivial example us ever undertakes laborious
+                                        physical exercise.</p>
+                                    <p>Indignation and dislike men who are so beguiled and demoralized by the charms of
+                                        pleasure of moments by desire, that they cannot foresee the pain and trouble
+                                        that.</p>
+                                    <p>But who has any right to find fault with a man who chooses to enjoy a pleasures.
+                                    </p>
+                                    <h3>Same as saying through shrinking</h3>
+                                    <p>Must explain to you how all this mistaken idea of denouncing pleasure and
+                                        praising pain was born and I will give you a complete account of the system,</p>
+                                    <div class="blog-details__image-column">
+                                        <div class="blog-details__image-column-image">
+                                            <img src="{% static 'assets/images/blog/blog-d-1-1.jpg" alt="">
+                                        </div>
+                                        <div class="blog-details__image-column-content">
+                                            <h4>For Residential</h4>
+                                            <p>Indignation and dislike men who are so beguiled & demoralized by the
+                                                charms of pleasure;</p>
+                                            <ul class="blog-details__list list-unstyled">
+                                                <li>When nothing prevents our being able to do we like</li>
+                                                <li>Certain circumstances owing to the claims</li>
+                                                <li>Every pleasures is to be welcomed and every pain</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="blog-details__image-column">
+                                        <div class="blog-details__image-column-image">
+                                            <img src="{% static 'assets/images/blog/blog-d-1-2.jpg" alt="">
+                                        </div>
+                                        <div class="blog-details__image-column-content">
+                                            <h4>For Commercial</h4>
+                                            <p>Indignation and dislike men who are so beguiled & demoralized by the
+                                                charms of pleasure;</p>
+                                            <ul class="blog-details__list list-unstyled">
+                                                <li>When nothing prevents our being able to do we like</li>
+                                                <li>Certain circumstances owing to the claims</li>
+                                                <li>Every pleasures is to be welcomed and every pain</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- /.blog-one__single -->
+                            <div class="blog-details__share">
+                                <div class="blog-details__tags">
+                                    <a href="#">Construction</a>
+                                    <a href="#">Dust</a>
+                                    <a href="#">Recycle</a>
+                                </div><!-- /.blog-details__tags -->
+                                <div class="blog-details__social">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                                </div><!-- /.blog-details__social -->
+                            </div><!-- /.blog-details__share -->
+
+                            <div class="blog-details__author">
+                                <div class="blog-details__author-image">
+                                    <img src="{% static 'assets/images/blog/blog-author-1-1.jpg" alt="">
+                                </div><!-- /.blog-details__author-image -->
+                                <div class="blog-details__author-content">
+                                    <div class="blog-details__author-top">
+                                        <h3>Conan Brian</h3>
+                                        <p>Visit: <a href="http://my.blog.com">http://my.blog.com</a></p>
+                                    </div><!-- /.blog-details__author-top -->
+                                    <p>Denouncing pleasure and praising pain was born and I will give completed all
+                                        account of the system & expound.</p>
+                                    <div class="blog-details__author-profile">
+                                        <span>Connect: </span>
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i
+                                                class="fab fa-twitter"></i></a><a href="#"><i
+                                                class="fab fa-linkedin-in"></i></a>
+                                    </div><!-- /.blog-details__author-profile -->
+                                </div><!-- /.blog-details__author-content -->
+                            </div><!-- /.blog-details__author -->
+                            <div class="blog-details__paginations">
+                                <div class="blog-details__paginations-left">
+                                    <a href="blog-details.html"><i class="fa fa-long-arrow-alt-left"></i>Prev Post</a>
+                                    <img src="{% static 'assets/images/blog/blog-pagination-1-1.jpg" alt="">
+                                    <h3><a href="blog-details.html">Municipal Recycling & Waste Management</a></h3>
+                                    <p><i class="far fa-calendar-alt"></i> 21.05.2021</p>
+                                </div><!-- /.blog-details__paginations-left -->
+                                <div class="blog-details__paginations-right">
+                                    <a href="blog-details.html"><i class="fa fa-long-arrow-alt-right"></i>Next Post</a>
+                                    <img src="{% static 'assets/images/blog/blog-pagination-1-2.jpg" alt="">
+                                    <h3><a href="blog-details.html">Got Junk? Time For Dumpster Rental in Scrapy.</a>
+                                    </h3>
+                                    <p><i class="far fa-calendar-alt"></i> 21.05.2021</p>
+                                </div><!-- /.blog-details__paginations-right -->
+                            </div><!-- /.blog-details__paginations -->
+                            <a data-toggletext="Show Comment" data-target-for-toggle="#comment-block" href="#" class="blog-details__hide-comment">Hide Comments</a>
+                            <div class="blog-details__comment-block" id="comment-block">
+                                <h3>Comments</h3>
+                                <div class="comment-one__single">
+                                    <img src="{% static 'assets/images/blog/comment-1-1.jpg" alt="">
+                                    <h3>Steven Rich, <span>February 28, 2021 [ 11.00am]</span></h3>
+                                    <p>On the other hand, we denounce with righteous indignation dislike men which toil
+                                        and
+                                        some great pleasure.</p>
+                                    <a href="#" class="comment-one__reply">Reply</a>
+                                </div><!-- /.comment-one__single -->
+                                <div class="comment-one__single">
+                                    <img src="{% static 'assets/images/blog/comment-1-2.jpg" alt="">
+                                    <h3>Steven Rich, <span>February 28, 2021 [ 11.00am]</span></h3>
+                                    <p>On the other hand, we denounce with righteous indignation dislike men which toil
+                                        and
+                                        some great pleasure.</p>
+                                    <a href="#" class="comment-one__reply">Reply</a>
+                                </div><!-- /.comment-one__single -->
+                                <div class="comment-one__single">
+                                    <img src="{% static 'assets/images/blog/comment-1-3.jpg" alt="">
+                                    <h3>Steven Rich, <span>February 28, 2021 [ 11.00am]</span></h3>
+                                    <p>On the other hand, we denounce with righteous indignation dislike men which toil
+                                        and
+                                        some great pleasure.</p>
+                                    <a href="#" class="comment-one__reply">Reply</a>
+                                </div><!-- /.comment-one__single -->
+                            </div><!-- /.blog-details__comment-block -->
+                            <form action="#" class="blog-details__form">
+                                <h3>Leave a Reply</h3>
+                                <p>Your email address will not be published.</p>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <textarea placeholder="Your Comments" name="message"></textarea>
+                                    </div><!-- /.col-md-12 -->
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Your Name*" name="name">
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Email Address*" name="email">
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-12">
+                                        <button type="submit" class="thm-btn blog-details__form-btn">Submit Now</button>
+                                    </div><!-- /.col-md-12 -->
+                                </div><!-- /.row -->
+                            </form><!-- /.blog-details__form -->
+
+                        </div><!-- /.blog-one__main -->
+
+                    </div><!-- /.col-lg-8 -->
+                    <div class="col-lg-4">
+                        <div class="blog-sidebar">
+                            <div class="blog-sidebar__single">
+                                <div class="blog-sidebar__search">
+                                    <input type="text" placeholder="Keyword ...">
+                                    <button type="submit"><i class="wastey-icon-54"></i></button>
+                                </div><!-- /.blog-sidebar__search -->
+                            </div><!-- /.blog-sidebar__single -->
+                            <div class="blog-sidebar__single">
+                                <h3 class="blog-sidebar__title"><span>Categories</span></h3>
+                                <!-- /.blog-sidebar__title -->
+                                <ul class="list-unstyled blog-sidebar__categories">
+                                    <li><a href="#">Commercial Waste <span>06</span></a></li>
+                                    <li><a href="#">Garbage Removal<span>08</span></a></li>
+                                    <li><a href="#">Recycling & Recovery <span>03</span></a></li>
+                                    <li><a href="#">Commercial Waste <span>14</span></a></li>
+                                    <li><a href="#">Commercial Waste <span>06</span></a></li>
+                                </ul><!-- /.list-unstyled blog-sidebar__categories -->
+                            </div><!-- /.blog-sidebar__single -->
+                            <div class="blog-sidebar__single">
+                                <h3 class="blog-sidebar__title"><span>Popular Post</span></h3>
+                                <!-- /.blog-sidebar__title -->
+                                <ul class="list-unstyled blog-sidebar__post">
+                                    <li>
+                                        <h3><a href="blog-details.html">Municipal Recycling & Waste Management</a></h3>
+                                        <span><i class="far fa-calendar-alt"></i>21.05.2021</span>
+                                    </li>
+                                    <li>
+                                        <h3><a href="blog-details.html">Municipal Recycling & Waste Management</a></h3>
+                                        <span><i class="far fa-calendar-alt"></i>21.05.2021</span>
+                                    </li>
+                                    <li>
+                                        <h3><a href="blog-details.html">Municipal Recycling & Waste Management</a></h3>
+                                        <span><i class="far fa-calendar-alt"></i>21.05.2021</span>
+                                    </li>
+                                </ul><!-- /.list-unstyled blog-sidebar__post -->
+                            </div><!-- /.blog-sidebar__single -->
+                            <div class="blog-sidebar__single">
+                                <h3 class="blog-sidebar__title"><span>Gallery</span></h3>
+                                <!-- /.blog-sidebar__title -->
+                                <ul class="list-unstyled blog-sidebar__gallery">
+                                    <li>
+                                        <a class="img-popup" href="{% static 'assets/images/blog/blog-g-1-1.jpg">
+                                            <img src="{% static 'assets/images/blog/blog-g-1-1.jpg" alt=""></a>
+                                    </li>
+                                    <li>
+                                        <a class="img-popup" href="{% static 'assets/images/blog/blog-g-1-2.jpg">
+                                            <img src="{% static 'assets/images/blog/blog-g-1-2.jpg" alt=""></a>
+                                    </li>
+                                    <li>
+                                        <a class="img-popup" href="{% static 'assets/images/blog/blog-g-1-3.jpg">
+                                            <img src="{% static 'assets/images/blog/blog-g-1-3.jpg" alt=""></a>
+                                    </li>
+                                    <li>
+                                        <a class="img-popup" href="{% static 'assets/images/blog/blog-g-1-4.jpg">
+                                            <img src="{% static 'assets/images/blog/blog-g-1-4.jpg" alt=""></a>
+                                    </li>
+                                    <li>
+                                        <a class="img-popup" href="{% static 'assets/images/blog/blog-g-1-5.jpg">
+                                            <img src="{% static 'assets/images/blog/blog-g-1-5.jpg" alt=""></a>
+                                    </li>
+                                    <li>
+                                        <a class="img-popup" href="{% static 'assets/images/blog/blog-g-1-6.jpg">
+                                            <img src="{% static 'assets/images/blog/blog-g-1-6.jpg" alt=""></a>
+                                    </li>
+                                </ul><!-- /.list-unstyled blog-sidebar__gallery -->
+                            </div><!-- /.blog-sidebar__single -->
+                            <div class="blog-sidebar__single">
+                                <h3 class="blog-sidebar__title"><span>Tag Cloud</span></h3>
+                                <!-- /.blog-sidebar__title -->
+                                <div class="list-unstyled blog-sidebar__tags">
+                                    <a href="#">Bin</a>
+                                    <a href="#">Construction</a>
+                                    <a href="#">Dust</a>
+                                    <a href="#">E-Waste</a>
+                                    <a href="#">Food Waste</a>
+                                    <a href="#">Glass</a>
+                                    <a href="#">Metal</a>
+                                    <a href="#">Paper</a>
+                                    <a href="#">Plastic</a>
+                                    <a href="#">Recycle</a>
+                                    <a href="#">Universal</a>
+                                </div><!-- /.list-unstyled blog-sidebar__tags -->
+                            </div><!-- /.blog-sidebar__single -->
+                            <div class="blog-sidebar__single blog-sidebar__subscribe"
+                                style="background-image: url(assets/images/blog/blog-s-cta-1-1.jpg);">
+                                <div class="blog-sidebar__subscribe-icon">
+                                    <i class="wastey-icon-79"></i>
+                                </div><!-- /.blog-sidebar__icon -->
+                                <h3>Receive Our <br>Industry Updates.</h3>
+                                <form action="#" class="mc-form"
+                                    data-url="https://xyz.us18.list-manage.com/subscribe/post?u=20e91746ef818cd941998c598&amp;id=cc0ee8140e">
+                                    <input type="email" class="formInput" placeholder="Your Email ...">
+                                    <button type="submit"><i class="fa fa-paper-plane"></i></button>
+                                    <div class="mc-form__response"></div><!-- /.mc-form__response -->
+
+                                </form>
+                                <p><span>*</span> email not share with others.</p>
+
+                            </div><!-- /.blog-sidebar__single -->
+                        </div><!-- /.blog-sidebar -->
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.blog-one -->
+
+
+
+        <section class="main-footer-wrap">
+            <div class="main-footer__bg" style="background-image: url(assets/images/backgrounds/footer-bg-1-1.jpg);">
+            </div><!-- /.main-footer__bg -->
+            <section class="cta-one">
+                <div class="container wow fadeInUp" data-wow-duration="1500ms">
+                    <div class="inner-container"
+                        style="background-image: url(assets/images/backgrounds/cta-bg-1-1.jpg);">
+                        <div class="cta-one__content">
+                            <h3>We Provide Superior Value, Service & Effort.</h3>
+                            <p>Combined with a handful of model sentence structures, to generate.</p>
+                        </div><!-- /.cta-one__content -->
+                        <div class="cta-one__btn-block">
+                            <a href="{% url 'services' %}" class="thm-btn">More Details</a>
+                        </div><!-- /.cta-one__btn-block -->
+                    </div><!-- /.inner-container -->
+                </div><!-- /.container -->
+            </section><!-- /.cta-one -->
+
+            <footer class="site-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3">
+                            <div class="footer-widget">
+                                <a href="{% url 'home' %}" class="footer-widget__logo">
+                                    <img src="{% static 'assets/images/logo-1-2.png' %}" alt="">
+                                </a>
+                                <p>There are many variations passages lorem ipsumd available the majority have suffered
+                                    alterationd some form by injected humour, or randomised words which don't look even
+                                    slightly believable. <a href="{% url 'our_story' %}">Read More ...</a></p>
+                                <div class="footer-widget__review">
+                                    <h3>Excellent</h3>
+                                    <div class="footer-widget__review-stars">
+                                        <i class="wastey-icon-52"></i>
+                                        <i class="wastey-icon-52"></i>
+                                        <i class="wastey-icon-52"></i>
+                                        <i class="wastey-icon-52"></i>
+                                        <i class="wastey-icon-52"></i>
+                                    </div><!-- /.footer-widget__review-stars -->
+                                    <p>Based On 2,518 Reviews</p>
+                                    <span class="footer-widget__review-count">
+                                        4.9
+                                    </span>
+                                </div><!-- /.footer-widget__review -->
+                            </div><!-- /.footer-widget -->
+                        </div><!-- /.col-lg-3 -->
+                        <div class="col-xl-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="footer-widget">
+                                        <h3 class="footer-widget__title"><span>Our Services</span></h3>
+                                        <!-- /.footer-widget__title -->
+                                        <ul class="list-unstyled footer-widget__list">
+                                            <li><a href = "{% url 'waste_removal' %}">Recurring Waste Services</a></li>
+                                            <li><a href="{% url 'rent_dumpster' %}">Dumpster Rentals</a></li>
+                                            <li><a href="{% url 'on_demand' %}">On Demand Collection</a></li>
+                                            <li><a href="{% url 'technology' %}">Technology</a></li>
+                                            <li><a href="ser-d-sustain.html">Sustainability Programs</a></li>
+                                            <li><a href="{% url 'zero_waste' %}">Zero Waste</a></li>
+                                        </ul><!-- /.list-unstyled footer-widget__list -->
+                                    </div><!-- /.footer-widget -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="footer-widget">
+                                        <h3 class="footer-widget__title"><span>Useful Links</span></h3>
+                                        <!-- /.footer-widget__title -->
+                                        <ul class="list-unstyled footer-widget__list">
+                                            <li><a href="{% url 'our_story' %}">About Company</a></li>
+                                            <li><a href="case-1.html">Projects</a></li>
+                                            <li><a href="{% url 'team' %}">Team</a></li>
+                                            <li><a href="blog-listing.html">News & Updates</a></li>
+                                            <li><a href="{% url 'f&q' %}">Help & Support</a></li>
+                                            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                                        </ul><!-- /.list-unstyled footer-widget__list -->
+
+                                    </div><!-- /.footer-widget -->
+                                </div><!-- /.col-md-6 -->
+                            </div><!-- /.row -->
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <form action="#" class="footer-widget__subscribe-form mc-form"
+                                        data-url="https://xyz.us18.list-manage.com/subscribe/post?u=20e91746ef818cd941998c598&amp;id=cc0ee8140e">
+                                        <input type="email" class="formInput" placeholder="Your Email Address">
+                                        <button type="submit">Subscribe Us</button>
+                                        <div class="mc-form__response"></div><!-- /.mc-form__response -->
+                                    </form><!-- /.footer-widget__subscribe-form -->
+                                </div><!-- /.col-lg-12 -->
+                            </div><!-- /.row -->
+
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-xl-3">
+                            <div class="footer-widget footer-widget__contact">
+                                <h3 class="footer-widget__title"><span>Contact Us</span></h3>
+                                <!-- /.footer-widget__title -->
+                                <ul class="footer-widget__contact-list list-unstyled">
+                                    <li>
+                                        <i class="wastey-icon-2"></i>
+                                        Po box 12345 <br>
+                                        654 Varick Str, BLN 11210
+                                    </li>
+                                    <li>
+                                        <i class="wastey-icon-4"></i>
+                                        <a href="tel:+800-456-78-901">+800 456 78 901</a>
+                                        <a href="mailto:info@junkbuster.com">info@junkbuster.com </a>
+                                    </li>
+                                    <li>
+                                        <i class="wastey-icon-3"></i>
+                                        Opening Hrs: <br> Mon-Sat: 9.00am to 7.00pm
+                                    </li>
+                                    <li>
+                                        <i class="wastey-icon-2"></i>
+                                        <span>Connect With Us</span>
+                                        <div class="footer-widget__social">
+                                            <a href="#" class="fab fa-facebook-f"></a>
+                                            <a href="#" class="fab fa-twitter"></a>
+                                            <a href="#" class="fab fa-linkedin-in"></a>
+                                        </div><!-- /.footer-widget__social -->
+                                    </li>
+                                </ul><!-- /.footer-widget__contact-list list-unstyled -->
+                            </div><!-- /.footer-widget -->
+                        </div><!-- /.col-lg-3 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </footer><!-- /.site-footer -->
+        </section><!-- /.main-footer-wrap -->
+        <div class="site-footer__bottom">
+            <div class="container">
+                <p>Copyright © 2021 All Rights Reserved by <a href="{% url 'home' %}">Scrapy.</a></p>
+                <ul class="list-unstyled site-footer__bottom-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms + Conditions</a></li>
+                </ul><!-- /.list-unstyled -->
+            </div><!-- /.container -->
+        </div><!-- /.site-footer__bottom -->
+
+    </div><!-- /.page-wrapper -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <div class="side-menu__block">
+
+        <a href="#" class="side-menu__toggler side-menu__close-btn"><i class="fa fa-times"></i>
+            <!-- /.fa fa-close --></a>
+
+        <div class="side-menu__block-overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+
+            <a href="{% url 'home' %}" class="side-menu__logo"><img src="assets/images/logo-1-2.png" alt=""></a>
+            <nav class="mobile-nav__container">
+                <!-- content is loading via js -->
+            </nav>
+            <p class="side-menu__block__copy">(c) 2021 <a href="#">Scrapy</a> - All rights reserved.</p>
+            <div class="side-menu__social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-google-plus"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+
+
+    <div class="side-content__block">
+        <div class="side-content__block-overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-content__block-overlay -->
+        <a href="#" class="wastey-icon-6 side-content__close"></a>
+        <div class="side-content__block-inner ">
+            <div class="side-content__top">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'assets/images/logo-1-1.png' %}" alt="">
+                </a>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                    looking.</p>
+                <a href="#" class="side-content__download">
+                    <i class="wastey-icon-73"></i>
+                    Company Profile
+                    <span>48 KB</span>
+                </a>
+            </div><!-- /.side-content__top -->
+            <div class="side-content__content">
+                <div class="side-content__title">
+                    <h3><span>Download App</span></h3>
+                </div><!-- /.side-content__title -->
+                <div class="side-content__app">
+                    <img src="assets/images/shapes/side-content-moc-1-1.png" alt="">
+                    <div class="side-content__app-btns">
+                        <a href="#" class="side-content__btn">Download</a><!-- /.side-content__btn -->
+                        <a href="#" class="side-content__btn">How It’s Work</a><!-- /.side-content__btn -->
+                    </div><!-- /.side-content__app-btns -->
+                </div><!-- /.side-content__app -->
+                <div class="side-content__social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-google-plus"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+                <p>Copyright © 2021 All Rights Reserved.</p>
+            </div><!-- /.side-content__content -->
+        </div><!-- /.side-content__block-inner -->
+    </div><!-- /.side-content__block -->
+
+    <div class="search-popup" style="display: none;">
+        <div class="search-popup__overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.search-popup__overlay -->
+        <div class="search-popup__inner">
+            <form action="#" class="search-popup__form">
+                <input type="text" name="search" placeholder="Type here to Search....">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div><!-- /.search-popup__inner -->
+    </div><!-- /.search-popup -->
+
+
+    <!-- plugins Scripts -->
+    <script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/TweenMax.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'assets/js/theme.js' %}"></script>
+
+</body>
+
+</html>

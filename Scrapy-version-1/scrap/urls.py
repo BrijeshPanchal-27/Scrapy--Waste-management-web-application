@@ -1,0 +1,35 @@
+from django.urls import path
+from scrap.views import *
+
+urlpatterns = [
+    path("", home, name="home"),
+    path("our_story/", our_story, name="our_story"),
+    path("company_value/", company, name="company_value"),
+    path("team/", team, name="team"),
+    path("career/", career, name="career"),
+    path("services/", services, name="services"),
+    path("waste_removal/", waste_removal, name="waste_removal"),
+    path("rent_dumpster/", rent_dumpster, name="rent_dumpster"),
+    path("on_demand/", on_demand, name="on_demand"),
+    path("zero_waste/", zero_waste, name="zero_waste"),
+    path("technology/", technology, name="technology"),
+    path("industries/", industries, name="industries"),
+    path("industries_grocery/", industries_grocery, name="industries_grocery"),
+    path("industries_medical/", industries_medical, name="industries_medical"),
+    path("industries_hotel/", industries_hotel, name="industries_hotel"),
+    path("industries_munci/", industries_munci, name="industries_munci"),
+    path("industries_mall/", industries_mall, name="industries_mall"),
+    path("industries_stadium/", industries_stadium, name="industries_stadium"),
+    path("f&q/", queries, name="f&q"),
+    path("contact/", contact, name="contact"),
+    path("pricing/", pricing, name="pricing"),
+    path("order/<int:id>", order, name="order"),
+    path("order/", orderPlaced, name="orderplaced"),
+    path("orders/", viewOrders, name="orders"),
+    path("login/", login, name="login"),
+    path("register/", register, name="register"),
+    path("logout/", logout, name="logout"),
+    path('collectors/', collectors, name="collectors"),
+    path('profile/', CreateCollectors.as_view(), name="profile"),
+
+]

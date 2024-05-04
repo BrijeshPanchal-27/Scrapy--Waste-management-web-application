@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrapy || Waste Pickup Service HTML Template</title>
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicons/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'assets/images/favicons/site.webmanifest' %}">
+
+    <!-- plugins Styles -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yantramanav:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap-select.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/jquery.mCustomScrollbar.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/wastey-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+
+    <!-- template Styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+
+</head>
+
+<body>
+
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div><!-- /.preloader -->
+
+    <div class="page-wrapper">
+
+        <div class="topbar-one">
+            <div class="container">
+                <ul class="list-unstyled topbar-one__infos">
+                    <li class="topbar-one__select-box">
+                        <i class="wastey-icon-1"></i>
+                        <select class="selectpicker">
+                            <option value="branch-1">NewYork</option>
+                            <option value="branch-2">California</option>
+                            <option value="branch-3">Melbourn</option>
+                        </select>
+                    </li>
+                    <li>
+                        <i class="wastey-icon-2"></i>
+                        <h3>Main BRanch</h3>
+                        <p>654 Varick Str, BLN 11210</p>
+                    </li>
+                    <li>
+                        <i class="wastey-icon-3"></i>
+                        <h3>Mon - SUN</h3>
+                        <p>9.00am to 8.00pm</p>
+                    </li>
+                    <li>
+                        <i class="wastey-icon-4"></i>
+                        <h3><a href="tel:+800-456-78-901">+800 456 78 901</a></h3>
+                        <p><a href="mailto:info@junkbuster.com">info@junkbuster.com</a></p>
+                    </li>
+                </ul><!-- /.list-unstyled topbar-one__infos -->
+                <div class="topbar-one__right">
+                    <a class="sidecontent__toggler side-content__toggler" href="#"><i class="wastey-icon-5"></i></a>
+                </div><!-- /.topbar-one__right -->
+            </div><!-- /.container -->
+        </div><!-- /.topbar-one -->
+        <header class="header-one stricky">
+            <a href="#" class="topbar-one__toggler"><i class="far fa-angle-down"></i></a><!-- /.topbar-one__toggler -->
+            <div class="container">
+                <div class="header-one__logo mt-2">
+                    <a href="{% url 'home' %}">
+                        <img src="{% static 'assets/images/logo-1-1.png' %}" alt="">
+                    </a>
+                    <span class="side-menu__toggler fa fa-bars"></span>
+                </div><!-- /.header-one__logo -->
+                <nav class="header-one__menu main-nav__main-navigation">
+                    <ul class="header-one__menu-list main-nav__navigation-box">
+                        <li class="dropdown">
+                            <a href="{% url 'home' %}">Home</a>
+
+                        </li><!-- /.dropdown -->
+                        <li class="dropdown">
+                            <a href="#">About</a>
+                            <ul>
+                                <li><a href="{% url 'our_story' %}">Our Story</a></li>
+                                <li><a href="{% url 'company_value' %}">Company Values</a></li>
+                                <li><a href="{% url 'team' %}">Team</a></li>
+                                <li><a href="{% url 'career' %}">Career</a></li>
+                            </ul>
+                        </li><!-- /.dropdown -->
+                        <li class="dropdown">
+                            <a href="{% url 'services' %}">Services</a>
+                            <ul>
+                                <li><a href="{% url 'services' %}">All Services</a></li>
+                                <li><a href = "{% url 'waste_removal' %}">Waste Removal</a></li>
+                                <li><a href="{% url 'rent_dumpster' %}">Dumpster Rentals</a></li>
+                                <li><a href="{% url 'on_demand' %}">On-Demand Collection</a></li>
+                                <li><a href="{% url 'zero_waste' %}">Zero Waste</a></li>
+                                <li><a href="{% url 'technology' %}">Technology</a></li>
+                            </ul>
+                        </li><!-- /.dropdown -->
+                        <li class="dropdown">
+                            <a href="{% url 'industries' %}">Industries</a>
+                            <ul>
+                                <li><a href="{% url 'industries' %}">All Industries</a></li>
+                                <li><a href="{% url 'industries_grocery' %}">Grocery Stores</a></li>
+                                <li><a href="{% url 'industries_medical' %}">Medical & Hospital</a></li>
+                                <li><a href="{% url 'industries_hotel' %}">Hotel & Restaurant</a></li>
+                                <li><a href="{% url 'industries_munci' %}">Municipalities</a></li>
+                                <li><a href="{% url 'industries_mall' %}">Mall & Theatre</a></li>
+                                <li><a href="{% url 'industries_stadium' %}">Stadium & Event</a></li>
+                            </ul>
+                        </li><!-- /.dropdown -->
+                        <li><a href="{% url 'pricing' %}">Pricing</a></li>
+<li><a href="{% url 'collectors' %}">Collectors</a></li>
+                        <li><a href="{% url 'orders' %}">Orders</a></li>
+                        {% if request.user.is_authenticated %}
+                        <li class="has-dropdown">
+                            <a href="#" class="mx-2">Welcome {{request.user.username}}</a>
+                            <ul class="sub-menu">
+                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                            </ul>
+                        </li>
+
+                        {% else%}
+                        <li><a href="{% url 'register' %}">Register</a></li>
+                        <li><a href="{% url 'login' %}" class="mx-2">Login</a></li>
+                        {% endif %}
+                    </ul><!-- /.header-one__menu-list -->
+                </nav><!-- /.header-one__menu -->
+            </div>
+        </header><!-- /.header-one -->
+
+
+        <!-- banner-section -->
+        <section class="banner-section style-one">
+            <div class="banner-carousel owl-theme owl-carousel">
+                <div class="slide-item">
+                    <div class="image-layer" style="background-image:url(assets/images/banner/banner-1.jpg)"></div>
+                    <div class="container">
+                        <div class="content-box">
+                            <h5>Reliable recycling pickup</h5>
+                            <h1>Residential & Commercial <span>Waste Pickup</span> Service.</h1>
+                            <ul class="list clearfix">
+                                <li>
+                                    <div class="icon-box"><img src="{% static 'assets/images/icons/icons-1.png' %}"
+                                            alt=""></div>
+                                    <h3>LEED-Accredited Professionals</h3>
+                                </li>
+                                <li>
+                                    <div class="icon-box"><img src="{% static 'assets/images/icons/icons-1.png' %}"
+                                            alt=""></div>
+                                    <h3>Transparent Diversion Reports</h3>
+                                </li>
+                            </ul>
+                            <div class="btn-box">
+                                <a href="{% url 'home' %}" class="thm-btn banner-btn">More Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-item">
+                    <div class="image-layer" style="background-image:url(assets/images/banner/banner-2.jpg)"></div>
+                    <div class="container clearfix">
+                        <div class="content-box pull-right">
+                            <h5>Reliable recycling pickup</h5>
+                            <h1>Connect with the Best waste solution.</h1>
+                            <ul class="list clearfix">
+                                <li>
+                                    <div class="icon-box"><img src="{% static 'assets/images/icons/icons-1.png' %}"
+                                            alt=""></div>
+                                    <h3>LEED-Accredited Professionals</h3>
+                                </li>
+                                <li>
+                                    <div class="icon-box"><img src="{% static 'assets/images/icons/icons-1.png' %}"
+                                            alt=""></div>
+                                    <h3>Transparent Diversion Reports</h3>
+                                </li>
+                            </ul>
+                            <div class="btn-box">
+                                <a href="{% url 'home' %}" class="thm-btn banner-btn">More Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-item">
+                    <div class="image-layer" style="background-image:url(assets/images/banner/banner-3.jpg)"></div>
+                    <div class="container">
+                        <div class="content-box">
+                            <h5>Reliable recycling pickup</h5>
+                            <h1>Driven By Commitments Guided By Values</h1>
+                            <ul class="list clearfix">
+                                <li>
+                                    <div class="icon-box"><img src="{% static 'assets/images/icons/icons-1.png' %}"
+                                            alt=""></div>
+                                    <h3>LEED-Accredited Professionals</h3>
+                                </li>
+                                <li>
+                                    <div class="icon-box"><img src="{% static 'assets/images/icons/icons-1.png' %}"
+                                            alt=""></div>
+                                    <h3>Transparent Diversion Reports</h3>
+                                </li>
+                            </ul>
+                            <div class="btn-box">
+                                <a href="{% url 'home' %}" class="thm-btn banner-btn">More Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="other-box">
+                    <div class="box-inner" style="background-image: url(assets/images/resources/other-bg.jpg);">
+                        <div class="text">
+                            <p>Ever undertakes laborious on physical exercise except to obtain.</p>
+                            <a href="{% url 'home' %}">+</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- banner-section end -->
+
+
+        <!-- workin-area -->
+        <section class="workin-area">
+            <div class="container">
+                <div class="inner-container clearfix">
+                    <div class="single-item">
+                        <div class="inner-box">
+                            <div class="hidden-icon rotate-me"><i class="wastey-icon-7"></i></div>
+                            <div class="icon-box"><i class="wastey-icon-24"></i></div>
+                            <p>Recycling Solution</p>
+                            <h3>for residential area</h3>
+                        </div>
+                    </div>
+                    <div class="single-item">
+                        <div class="inner-box">
+                            <div class="hidden-icon rotate-me"><i class="wastey-icon-7"></i></div>
+                            <div class="icon-box"><i class="wastey-icon-12"></i></div>
+                            <p>Recycling Solution</p>
+                            <h3>for small business</h3>
+                        </div>
+                    </div>
+                    <div class="single-item">
+                        <div class="inner-box">
+                            <div class="hidden-icon rotate-me"><i class="wastey-icon-7"></i></div>
+                            <div class="icon-box"><i class="wastey-icon-13"></i></div>
+                            <p>Recycling Solution</p>
+                            <h3>for govt & education</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- workin-area end -->
+
+
+        <section class="service-one service-one__home-one">
+            <div class="anim-icon">
+                <div class="icon icon-1 float-bob-y"
+                    style="background-image: url(assets/images/icons/anim-icon-1.png);"></div>
+                <div class="icon icon-2 rotate-me" style="background-image: url(assets/images/icons/anim-icon-2.png);">
+                </div>
+                <div class="icon icon-3 float-bob-x"
+                    style="background-image: url(assets/images/icons/anim-icon-3.png);"></div>
+                <div class="icon icon-4 rotate-me" style="background-image: url(assets/images/icons/anim-icon-4.png);">
+                </div>
+                <div class="icon icon-5" style="background-image: url(assets/images/icons/anim-icon-5.png);"></div>
+                <div class="icon icon-6" style="background-image: url(assets/images/icons/anim-icon-6.png);"></div>
+            </div>
+            <div class="container">
+                <div class="block-title text-center">
+                    <p><span>Ideal solutions</span></p>
+                    <h2>Redefining Waste Services</h2>
+                    <div class="block-title__text">The point of using lorem ipsum is that it has a more-or-less normal
+                        distribution of letters, as opposed <br>
+                        using Content here, content here making it look like readable.</div><!-- /.block-title__text -->
+                </div><!-- /.block-title -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="service-one__single">
+                            <div class="service-one__main">
+                                <i class="wastey-icon-14"></i>
+                                <h3><a href="{% url 'rent_dumpster' %}">Recurring Waste
+                                        Services</a></h3>
+                                <a href="{% url 'rent_dumpster' %}">More Details</a>
+                            </div><!-- /.service-one__main -->
+                            <div class="service-one__hover"
+                                style="background-image: url(assets/images/services/service-1-1.jpg);">
+                                <div class="service-one__hover-inner">
+                                    <i class="wastey-icon-14"></i>
+                                    <h3><a href="{% url 'rent_dumpster' %}">Recurring Waste
+                                            Services</a></h3>
+                                    <p>It is long established fact that reader will be distracted by the looking at its
+                                        layout. </p>
+                                    <a href="{% url 'rent_dumpster' %}"><span></span>More Details</a>
+                                </div><!-- /.service-one__hover-inner -->
+                            </div><!-- /.service-one__hover -->
+                        </div><!-- /.service-one__single -->
+                    </div><!-- /.col-lg-3 col-md-6 col-sm-12 -->
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="service-one__single">
+                            <div class="service-one__main">
+                                <i class="wastey-icon-15"></i>
+                                <h3><a href="{% url 'rent_dumpster' %}">Dumster Rental Services</a></h3>
+                                <a href="{% url 'rent_dumpster' %}">More Details</a>
+                            </div><!-- /.service-one__main -->
+                            <div class="service-one__hover"
+                                style="background-image: url(assets/images/services/service-1-2.jpg);">
+                                <div class="service-one__hover-inner">
+                                    <i class="wastey-icon-15"></i>
+                                    <h3><a href="{% url 'rent_dumpster' %}">Dumster Rental Services</a></h3>
+                                    <p>It is long established fact that reader will be distracted by the looking at its
+                                        layout. </p>
+                                    <a href="{% url 'rent_dumpster' %}"><span></span>More Details</a>
+                                </div><!-- /.service-one__hover-inner -->
+                            </div><!-- /.service-one__hover -->
+                        </div><!-- /.service-one__single -->
+                    </div><!-- /.col-lg-3 col-md-6 col-sm-12 -->
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="service-one__single">
+                            <div class="service-one__main">
+                                <i class="wastey-icon-16"></i>
+                                <h3><a href="{% url 'rent_dumpster' %}">On - Demand Trash
+                                        Collection</a></h3>
+                                <a href="{% url 'rent_dumpster' %}">More Details</a>
+                            </div><!-- /.service-one__main -->
+                            <div class="service-one__hover"
+                                style="background-image: url(assets/images/services/service-1-3.jpg);">
+                                <div class="service-one__hover-inner">
+                                    <i class="wastey-icon-16"></i>
+                                    <h3><a href="{% url 'rent_dumpster' %}">On - Demand Trash
+                                            Collection</a></h3>
+                                    <p>It is long established fact that reader will be distracted by the looking at its
+                                        layout. </p>
+                                    <a href="{% url 'rent_dumpster' %}"><span></span>More Details</a>
+                                </div><!-- /.service-one__hover-inner -->
+                            </div><!-- /.service-one__hover -->
+                        </div><!-- /.service-one__single -->
+                    </div><!-- /.col-lg-3 col-md-6 col-sm-12 -->
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="service-one__single reversed">
+                            <div class="service-one__main">
+                                <i class="wastey-icon-41"></i>
+                                <h3><a href="{% url 'rent_dumpster' %}">Zero Waste <br>
+                                        Services</a></h3>
+                                <a href="{% url 'rent_dumpster' %}">More Details</a>
+                            </div><!-- /.service-one__main -->
+                            <div class="service-one__hover"
+                                style="background-image: url(assets/images/services/service-1-4.jpg);">
+                                <div class="service-one__hover-inner">
+                                    <i class="wastey-icon-41"></i>
+                                    <h3><a href="{% url 'rent_dumpster' %}">Zero Waste <br>
+                                            Services</a></h3>
+                                    <p>It is long established fact that reader will be distracted by the looking at its
+                                        layout. </p>
+                                    <a href="{% url 'rent_dumpster' %}"><span></span>More Details</a>
+                                </div><!-- /.service-one__hover-inner -->
+                            </div><!-- /.service-one__hover -->
+                        </div><!-- /.service-one__single -->
+                    </div><!-- /.col-lg-3 col-md-6 col-sm-12 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.service-one -->
+
+
+        <!-- about-section -->
+        <section class="about-section">
+            <div class="pattern-layer" style="background-image: url(assets/images/shapes/shape-2.png);"></div>
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                        <div class="content-box">
+                            <div class="block-title">
+                                <p><span>About Company</span></p>
+                                <h2>Top Rated <span>Waste Managment</span> Service Brand in City</h2>
+                            </div>
+                            <div class="text">
+                                <p>We denounce with righteous indignation and dislike men who are so beguiled and
+                                    demoralized by the charms of pleasure of the moment blinded by desires that they
+                                    cannot foresee the pain and trouble.</p>
+                            </div>
+                            <div class="inner-box">
+                                <figure class="company-logo rotate-me"><img
+                                        src="{% static 'assets/images/resources/company-logo-1.png" alt=""></figure>
+                                <ul class="list-item clearfix">
+                                    <li>
+                                        <figure class="icon-box"><img
+                                                src="{% static 'assets/images/icons/icons-2.png' %}" alt=""></figure>
+                                        <p>Being able to do what we like best</p>
+                                    </li>
+                                    <li>
+                                        <figure class="icon-box"><img
+                                                src="{% static 'assets/images/icons/icons-2.png' %}" alt=""></figure>
+                                        <p>Claims of duty or the obligations business</p>
+                                    </li>
+                                    <li>
+                                        <figure class="icon-box"><img
+                                                src="{% static 'assets/images/icons/icons-2.png' %}" alt=""></figure>
+                                        <p>Repudiated and annoyances accepted</p>
+                                    </li>
+                                    <li>
+                                        <figure class="icon-box"><img
+                                                src="{% static 'assets/images/icons/icons-2.png' %}" alt=""></figure>
+                                        <p>Holds in these matters to principle selection</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="lower-box clearfix">
+                                <div class="btn-box pull-left"><a href="index-2.html" class="thm-btn">Read More</a>
+                                </div>
+                                <div class="download-btn pull-left">
+                                    <h5><a href="index-2.html"><i class="wastey-icon-17"></i>Our Guides & Resources
+                                            <br />Download Now</a></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                        <div class="image-box">
+                            <div class="image-pattern" style="background-image: url(assets/images/shapes/shape-1.png);">
+                            </div>
+                            <figure class="image"><img src="{% static 'assets/images/resources/about-1.jpg" alt="">
+                            </figure>
+                            <div class="video-inner">
+                                <a href="https://youtu.be/BYdpaabiFqc" class="video-popup"><i
+                                        class="wastey-icon-18"></i></a>
+                                <h4>Real-time Pickup Notifications</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- about-section end -->
+
+
+        <!-- industries-section -->
+        <section class="industries-section bg-color-1">
+            <div class="container">
+                <div class="block-title text-center">
+                    <p><span>Industries</span></p>
+                    <h2>Service for the Industries</h2>
+
+                </div><!-- /.block-title -->
+                <div class="industries-carousel thm__owl-carousel owl-theme owl-carousel"
+                    data-carousel-next-btn=".industries__carousel-nav__right"
+                    data-carousel-prev-btn=".industries__carousel-nav__left" data-options='{
+                    "items": 3, "margin": 30, "loop": true, "autoPlay": true, "autoplayHoverPause": true, "autoplayTimeout": 5000, "smartSpeed": 700, "responsive": {
+                        "0": {
+                            "margin": 0,
+                            "items": 1
+                        },
+                        "480": {
+                            "margin": 0,
+                            "items": 1
+                        },
+                        "767": {
+                            "margin": 30,
+                            "items": 2
+                        },
+                        "1199": {
+                            "margin": 30,
+                            "items": 3
+                        },
+                        "1200": {
+                            "margin": 30,
+                            "items": 3
+                        }
+                    }
+                }'>
+                    <div class="industries-one__single">
+                        <div class="industries-one__image">
+                            <img src="{% static 'assets/images/industries/industries-1-1.jpg' %}" alt="">
+                        </div><!-- /.industries-one__image -->
+                        <div class="industries-one__content">
+                            <div class="industries-one__content-left">
+                                <h3><a href="{% url 'industries_grocery' %}">Grocery Stores</a></h3>
+                                <p>Actual teachings of great explorer truth, the master-builder.</p>
+                            </div><!-- /.industries-one__content-left -->
+                            <div class="industries-one__content-right">
+                                <div class="industries-one__icon">
+                                    <i class="wastey-icon-19"></i>
+                                </div><!-- /.industries-one__icon -->
+                                <div class="industries-one__more-link">
+                                    <i class="wastey-icon-59"></i>
+                                </div><!-- /.industries-one__more-link -->
+                            </div><!-- /.industries-one__content-right -->
+                            <div class="industries-one__content-hover">
+                                <i class="wastey-icon-19"></i>
+                                <a href="{% url 'industries_grocery' %}"><i class="wastey-icon-59"></i>Details</a>
+                            </div><!-- /.industries-one__content-hover -->
+                        </div><!-- /.industries-one__content -->
+                    </div>
+                    <div class="industries-one__single">
+                        <div class="industries-one__image">
+                            <img src="{% static 'assets/images/industries/industries-1-2.jpg' %}" alt="">
+                        </div><!-- /.industries-one__image -->
+                        <div class="industries-one__content">
+                            <div class="industries-one__content-left">
+                                <h3><a href="{% url 'industries_medical' %}">Medical & Hospital</a></h3>
+                                <p>Actual teachings of great explorer truth, the master-builder.</p>
+                            </div><!-- /.industries-one__content-left -->
+                            <div class="industries-one__content-right">
+                                <div class="industries-one__icon">
+                                    <i class="wastey-icon-20"></i>
+                                </div><!-- /.industries-one__icon -->
+                                <div class="industries-one__more-link">
+                                    <i class="wastey-icon-59"></i>
+                                </div><!-- /.industries-one__more-link -->
+                            </div><!-- /.industries-one__content-right -->
+                            <div class="industries-one__content-hover">
+                                <i class="wastey-icon-20"></i>
+                                <a href="{% url 'industries_medical' %}"><i class="wastey-icon-59"></i>Details</a>
+                            </div><!-- /.industries-one__content-hover -->
+                        </div><!-- /.industries-one__content -->
+                    </div>
+                    <div class="industries-one__single">
+                        <div class="industries-one__image">
+                            <img src="{% static 'assets/images/industries/industries-1-3.jpg' %}" alt="">
+                        </div><!-- /.industries-one__image -->
+                        <div class="industries-one__content">
+                            <div class="industries-one__content-left">
+                                <h3><a href="{% url 'industries_hotel' %}">Hotel & Restaurant</a></h3>
+                                <p>Actual teachings of great explorer truth, the master-builder.</p>
+                            </div><!-- /.industries-one__content-left -->
+                            <div class="industries-one__content-right">
+                                <div class="industries-one__icon">
+                                    <i class="wastey-icon-21"></i>
+                                </div><!-- /.industries-one__icon -->
+                                <div class="industries-one__more-link">
+                                    <i class="wastey-icon-59"></i>
+                                </div><!-- /.industries-one__more-link -->
+                            </div><!-- /.industries-one__content-right -->
+                            <div class="industries-one__content-hover">
+                                <i class="wastey-icon-21"></i>
+                                <a href="{% url 'industries_hotel' %}"><i class="wastey-icon-59"></i>Details</a>
+                            </div><!-- /.industries-one__content-hover -->
+                        </div><!-- /.industries-one__content -->
+                    </div>
+                    <div class="industries-one__single">
+                        <div class="industries-one__image">
+                            <img src="{% static 'assets/images/industries/industries-1-1.jpg' %}" alt="">
+                        </div><!-- /.industries-one__image -->
+                        <div class="industries-one__content">
+                            <div class="industries-one__content-left">
+                                <h3><a href="{% url 'industries_grocery' %}">Grocery Stores</a></h3>
+                                <p>Actual teachings of great explorer truth, the master-builder.</p>
+                            </div><!-- /.industries-one__content-left -->
+                            <div class="industries-one__content-right">
+                                <div class="industries-one__icon">
+                                    <i class="wastey-icon-19"></i>
+                                </div><!-- /.industries-one__icon -->
+                                <div class="industries-one__more-link">
+                                    <i class="wastey-icon-59"></i>
+                                </div><!-- /.industries-one__more-link -->
+                            </div><!-- /.industries-one__content-right -->
+                            <div class="industries-one__content-hover">
+                                <i class="wastey-icon-19"></i>
+                                <a href="{% url 'industries_grocery' %}"><i class="wastey-icon-59"></i>Details</a>
+                            </div><!-- /.industries-one__content-hover -->
+                        </div><!-- /.industries-one__content -->
+                    </div>
+                    <div class="industries-one__single">
+                        <div class="industries-one__image">
+                            <img src="{% static 'assets/images/industries/industries-1-2.jpg' %}" alt="">
+                        </div><!-- /.industries-one__image -->
+                        <div class="industries-one__content">
+                            <div class="industries-one__content-left">
+                                <h3><a href="{% url 'industries_medical' %}">Medical & Hospital</a></h3>
+                                <p>Actual teachings of great explorer truth, the master-builder.</p>
+                            </div><!-- /.industries-one__content-left -->
+                            <div class="industries-one__content-right">
+                                <div class="industries-one__icon">
+                                    <i class="wastey-icon-20"></i>
+                                </div><!-- /.industries-one__icon -->
+                                <div class="industries-one__more-link">
+                                    <i class="wastey-icon-59"></i>
+                                </div><!-- /.industries-one__more-link -->
+                            </div><!-- /.industries-one__content-right -->
+                            <div class="industries-one__content-hover">
+                                <i class="wastey-icon-20"></i>
+                                <a href="{% url 'industries_medical' %}"><i class="wastey-icon-59"></i>Details</a>
+                            </div><!-- /.industries-one__content-hover -->
+                        </div><!-- /.industries-one__content -->
+                    </div>
+                    <div class="industries-one__single">
+                        <div class="industries-one__image">
+                            <img src="{% static 'assets/images/industries/industries-1-3.jpg' %}" alt="">
+                        </div><!-- /.industries-one__image -->
+                        <div class="industries-one__content">
+                            <div class="industries-one__content-left">
+                                <h3><a href="{% url 'industries_hotel' %}">Hotel & Restaurant</a></h3>
+                                <p>Actual teachings of great explorer truth, the master-builder.</p>
+                            </div><!-- /.industries-one__content-left -->
+                            <div class="industries-one__content-right">
+                                <div class="industries-one__icon">
+                                    <i class="wastey-icon-21"></i>
+                                </div><!-- /.industries-one__icon -->
+                                <div class="industries-one__more-link">
+                                    <i class="wastey-icon-59"></i>
+                                </div><!-- /.industries-one__more-link -->
+                            </div><!-- /.industries-one__content-right -->
+                            <div class="industries-one__content-hover">
+                                <i class="wastey-icon-21"></i>
+                                <a href="{% url 'industries_hotel' %}"><i class="wastey-icon-59"></i>Details</a>
+                            </div><!-- /.industries-one__content-hover -->
+                        </div><!-- /.industries-one__content -->
+                    </div>
+                    <div class="industries-one__single">
+                        <div class="industries-one__image">
+                            <img src="{% static 'assets/images/industries/industries-1-1.jpg' %}" alt="">
+                        </div><!-- /.industries-one__image -->
+                        <div class="industries-one__content">
+                            <div class="industries-one__content-left">
+                                <h3><a href="{% url 'industries_grocery' %}">Grocery Stores</a></h3>
+                                <p>Actual teachings of great explorer truth, the master-builder.</p>
+                            </div><!-- /.industries-one__content-left -->
+                            <div class="industries-one__content-right">
+                                <div class="industries-one__icon">
+                                    <i class="wastey-icon-19"></i>
+                                </div><!-- /.industries-one__icon -->
+                                <div class="industries-one__more-link">
+                                    <i class="wastey-icon-59"></i>
+                                </div><!-- /.industries-one__more-link -->
+                            </div><!-- /.industries-one__content-right -->
+                            <div class="industries-one__content-hover">
+                                <i class="wastey-icon-19"></i>
+                                <a href="{% url 'industries_grocery' %}"><i class="wastey-icon-59"></i>Details</a>
+                            </div><!-- /.industries-one__content-hover -->
+                        </div><!-- /.industries-one__content -->
+                    </div>
+                    <div class="industries-one__single">
+                        <div class="industries-one__image">
+                            <img src="{% static 'assets/images/industries/industries-1-2.jpg' %}" alt="">
+                        </div><!-- /.industries-one__image -->
+                        <div class="industries-one__content">
+                            <div class="industries-one__content-left">
+                                <h3><a href="{% url 'industries_medical' %}">Medical & Hospital</a></h3>
+                                <p>Actual teachings of great explorer truth, the master-builder.</p>
+                            </div><!-- /.industries-one__content-left -->
+                            <div class="industries-one__content-right">
+                                <div class="industries-one__icon">
+                                    <i class="wastey-icon-20"></i>
+                                </div><!-- /.industries-one__icon -->
+                                <div class="industries-one__more-link">
+                                    <i class="wastey-icon-59"></i>
+                                </div><!-- /.industries-one__more-link -->
+                            </div><!-- /.industries-one__content-right -->
+                            <div class="industries-one__content-hover">
+                                <i class="wastey-icon-20"></i>
+                                <a href="{% url 'industries_medical' %}"><i class="wastey-icon-59"></i>Details</a>
+                            </div><!-- /.industries-one__content-hover -->
+                        </div><!-- /.industries-one__content -->
+                    </div>
+                    <div class="industries-one__single">
+                        <div class="industries-one__image">
+                            <img src="{% static 'assets/images/industries/industries-1-3.jpg' %}" alt="">
+                        </div><!-- /.industries-one__image -->
+                        <div class="industries-one__content">
+                            <div class="industries-one__content-left">
+                                <h3><a href="{% url 'industries_hotel' %}">Hotel & Restaurant</a></h3>
+                                <p>Actual teachings of great explorer truth, the master-builder.</p>
+                            </div><!-- /.industries-one__content-left -->
+                            <div class="industries-one__content-right">
+                                <div class="industries-one__icon">
+                                    <i class="wastey-icon-21"></i>
+                                </div><!-- /.industries-one__icon -->
+                                <div class="industries-one__more-link">
+                                    <i class="wastey-icon-59"></i>
+                                </div><!-- /.industries-one__more-link -->
+                            </div><!-- /.industries-one__content-right -->
+                            <div class="industries-one__content-hover">
+                                <i class="wastey-icon-21"></i>
+                                <a href="{% url 'industries_hotel' %}"><i class="wastey-icon-59"></i>Details</a>
+                            </div><!-- /.industries-one__content-hover -->
+                        </div><!-- /.industries-one__content -->
+                    </div>
+                    <div class="industries-one__single">
+                        <div class="industries-one__image">
+                            <img src="assets/images/industries/industries-1-1.jpg" alt="">
+                        </div><!-- /.industries-one__image -->
+                        <div class="industries-one__content">
+                            <div class="industries-one__content-left">
+                                <h3><a href="{% url 'industries_grocery' %}">Grocery Stores</a></h3>
+                                <p>Actual teachings of great explorer truth, the master-builder.</p>
+                            </div><!-- /.industries-one__content-left -->
+                            <div class="industries-one__content-right">
+                                <div class="industries-one__icon">
+                                    <i class="wastey-icon-19"></i>
+                                </div><!-- /.industries-one__icon -->
+                                <div class="industries-one__more-link">
+                                    <i class="wastey-icon-59"></i>
+                                </div><!-- /.industries-one__more-link -->
+                            </div><!-- /.industries-one__content-right -->
+                            <div class="industries-one__content-hover">
+                                <i class="wastey-icon-19"></i>
+                                <a href="{% url 'industries_grocery' %}"><i class="wastey-icon-59"></i>Details</a>
+                            </div><!-- /.industries-one__content-hover -->
+                        </div><!-- /.industries-one__content -->
+                    </div>
+                    <div class="industries-one__single">
+                        <div class="industries-one__image">
+                            <img src="{% static 'assets/images/industries/industries-1-2.jpg' %}" alt="">
+                        </div><!-- /.industries-one__image -->
+                        <div class="industries-one__content">
+                            <div class="industries-one__content-left">
+                                <h3><a href="{% url 'industries_medical' %}">Medical & Hospital</a></h3>
+                                <p>Actual teachings of great explorer truth, the master-builder.</p>
+                            </div><!-- /.industries-one__content-left -->
+                            <div class="industries-one__content-right">
+                                <div class="industries-one__icon">
+                                    <i class="wastey-icon-20"></i>
+                                </div><!-- /.industries-one__icon -->
+                                <div class="industries-one__more-link">
+                                    <i class="wastey-icon-59"></i>
+                                </div><!-- /.industries-one__more-link -->
+                            </div><!-- /.industries-one__content-right -->
+                            <div class="industries-one__content-hover">
+                                <i class="wastey-icon-20"></i>
+                                <a href="{% url 'industries_medical' %}"><i class="wastey-icon-59"></i>Details</a>
+                            </div><!-- /.industries-one__content-hover -->
+                        </div><!-- /.industries-one__content -->
+                    </div>
+                    <div class="industries-one__single">
+                        <div class="industries-one__image">
+                            <img src="'../static/assets/images/industries/industries-1-3.jpg'" alt="">
+                        </div><!-- /.industries-one__image -->
+                        <div class="industries-one__content">
+                            <div class="industries-one__content-left">
+                                <h3><a href="{% url 'industries_hotel' %}">Hotel & Restaurant</a></h3>
+                                <p>Actual teachings of great explorer truth, the master-builder.</p>
+                            </div><!-- /.industries-one__content-left -->
+                            <div class="industries-one__content-right">
+                                <div class="industries-one__icon">
+                                    <i class="wastey-icon-21"></i>
+                                </div><!-- /.industries-one__icon -->
+                                <div class="industries-one__more-link">
+                                    <i class="wastey-icon-59"></i>
+                                </div><!-- /.industries-one__more-link -->
+                            </div><!-- /.industries-one__content-right -->
+                            <div class="industries-one__content-hover">
+                                <i class="wastey-icon-21"></i>
+                                <a href="{% url 'industries_hotel' %}"><i class="wastey-icon-59"></i>Details</a>
+                            </div><!-- /.industries-one__content-hover -->
+                        </div><!-- /.industries-one__content -->
+                    </div>
+                </div><!-- /.owl-theme owl-carousel thm__owl-carousel -->
+            </div><!-- /.container -->
+        </section>
+        <!-- industries-section end -->
+
+
+        <!-- rental-section -->
+        <section class="rental-section"
+            style="background-image: url('../static/assets/images/backgrounds/rental-1.jpg');">
+            <div class="container">
+                <div class="upper-title">
+                    <div class="block-title">
+                        <p><span>Dumpster REntals</span></p>
+                        <h2>Our Rental Containers</h2>
+                    </div><!-- /.block-title -->
+                    <div class="more-link">
+                        <a href="{% url 'home' %}">View All Dumster <i class="fa fa-angle-right"></i></a>
+                    </div><!-- /.blog-grid__more-link -->
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-3 col-md-6 col-sm-12 single-column">
+                        <div class="single-item wow fadeInUp animated animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <h3>Front Cover</h3>
+                                <figure class="image-box"><img src="{% static 'assets/images/resources/rental-1.png' %}"
+                                        alt=""></figure>
+                                <span class="sizes">main sizes</span>
+                                <p>5.2318 yd3 and 10.4636 yd3</p>
+                                <a href="{% url 'home' %}" class="thm-btn">Read More <i class="wastey-icon-37"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 single-column">
+                        <div class="single-item wow fadeInUp animated animated" data-wow-delay="200ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <h3>MIDI Containers</h3>
+                                <figure class="image-box"><img src="{% static 'assets/images/resources/rental-2.png' %}"
+                                        alt=""></figure>
+                                <span class="sizes">main sizes</span>
+                                <p>6.53975 yd3 and 13.0795 yd3</p>
+                                <a href="{% url 'home' %}" class="thm-btn">Read More <i class="wastey-icon-37"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 single-column">
+                        <div class="single-item wow fadeInUp animated animated" data-wow-delay="400ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <h3>Press Containers</h3>
+                                <figure class="image-box"><img src="{% static 'assets/images/resources/rental-3.png' %}"
+                                        alt=""></figure>
+                                <span class="sizes">main sizes</span>
+                                <p>are around 26.159 yd3</p>
+                                <a href="{% url 'home' %}" class="thm-btn">Read More <i class="wastey-icon-37"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 single-column">
+                        <div class="single-item wow fadeInUp animated animated" data-wow-delay="600ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <h3>The Hooks</h3>
+                                <figure class="image-box"><img src="{% static 'assets/images/resources/rental-4.png' %}"
+                                        alt=""></figure>
+                                <span class="sizes">main sizes</span>
+                                <p>open or closed in many sizes.</p>
+                                <a href="{% url 'home' %}" class="thm-btn">Read More <i class="wastey-icon-37"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- rental-section end -->
+
+
+        <!-- features-section -->
+        <section class="features-section">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-xl-4 col-lg-12 col-md-12 title-column">
+                        <div class="title-inner">
+                            <div class="block-title">
+                                <p><span>Types of Waste</span></p>
+                                <h2>Materials We Collected</h2>
+                            </div>
+                            <div class="text">
+                                <p>We denounce with righteous indignation like men who are so beguiled by desires that
+                                    they cannot foresee the pain and trouble.</p>
+                            </div>
+                            <div class="btn-box">
+                                <a href="{% url 'home' %}" class="thm-btn">Let’s Talk</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-12 inner-column">
+                        <div class="inner-box wow fadeInLeft animated animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
+                            <div class="single-item">
+                                <div class="content-box">
+                                    <div class="icon-box"><i class="wastey-icon-22"></i></div>
+                                    <div class="link-box"><a href="{% url 'home' %}"><i class="wastey-icon-37"></i></a></div>
+                                    <h3>Cardboard</h3>
+                                </div>
+                                <div class="overlay-box">
+                                    <div class="icon-box"><i class="wastey-icon-22"></i></div>
+                                    <div class="link-box"><a href="{% url 'home' %}"><i class="wastey-icon-37"></i></a></div>
+                                    <h3>Cardboard</h3>
+                                    <p>Cardboard is one of the easiest materials</p>
+                                </div>
+                            </div>
+                            <div class="single-item">
+                                <div class="content-box">
+                                    <div class="icon-box"><i class="wastey-icon-24"></i></div>
+                                    <div class="link-box"><a href="{% url 'home' %}"><i class="wastey-icon-37"></i></a></div>
+                                    <h3>Furniture</h3>
+                                </div>
+                                <div class="overlay-box">
+                                    <div class="icon-box"><i class="wastey-icon-24"></i></div>
+                                    <div class="link-box"><a href="{% url 'home' %}"><i class="wastey-icon-37"></i></a></div>
+                                    <h3>Furniture</h3>
+                                    <p>Furniture is one of the easiest materials</p>
+                                </div>
+                            </div>
+                            <div class="single-item">
+                                <div class="content-box">
+                                    <div class="icon-box"><i class="wastey-icon-26"></i></div>
+                                    <div class="link-box"><a href="{% url 'home' %}"><i class="wastey-icon-37"></i></a></div>
+                                    <h3>Landscaping</h3>
+                                </div>
+                                <div class="overlay-box">
+                                    <div class="icon-box"><i class="wastey-icon-26"></i></div>
+                                    <div class="link-box"><a href="{% url 'home' %}"><i class="wastey-icon-37"></i></a></div>
+                                    <h3>Landscaping</h3>
+                                    <p>Landscaping is one of the easiest materials</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-12 inner-column">
+                        <div class="inner-box wow fadeInRight animated animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
+                            <div class="single-item">
+                                <div class="content-box">
+                                    <div class="icon-box"><i class="wastey-icon-23"></i></div>
+                                    <div class="link-box"><a href="{% url 'home' %}"><i class="wastey-icon-37"></i></a></div>
+                                    <h3>Construction</h3>
+                                </div>
+                                <div class="overlay-box">
+                                    <div class="icon-box"><i class="wastey-icon-23"></i></div>
+                                    <div class="link-box"><a href="{% url 'home' %}"><i class="wastey-icon-37"></i></a></div>
+                                    <h3>Construction</h3>
+                                    <p>Construction is one of the easiest materials</p>
+                                </div>
+                            </div>
+                            <div class="single-item">
+                                <div class="content-box">
+                                    <div class="icon-box"><i class="wastey-icon-25"></i></div>
+                                    <div class="link-box"><a href="{% url 'home' %}"><i class="wastey-icon-37"></i></a></div>
+                                    <h3>Food Waste</h3>
+                                </div>
+                                <div class="overlay-box">
+                                    <div class="icon-box"><i class="wastey-icon-25"></i></div>
+                                    <div class="link-box"><a href="{% url 'home' %}"><i class="wastey-icon-37"></i></a></div>
+                                    <h3>Food Waste</h3>
+                                    <p>Food Waste is one of the easiest</p>
+                                </div>
+                            </div>
+                            <div class="single-item">
+                                <div class="content-box">
+                                    <div class="icon-box"><i class="wastey-icon-27"></i></div>
+                                    <div class="link-box"><a href="{% url 'home' %}"><i class="wastey-icon-37"></i></a></div>
+                                    <h3>Metal Waste</h3>
+                                </div>
+                                <div class="overlay-box">
+                                    <div class="icon-box"><i class="wastey-icon-27"></i></div>
+                                    <div class="link-box"><a href="{% url 'home' %}"><i class="wastey-icon-37"></i></a></div>
+                                    <h3>Metal Waste</h3>
+                                    <p>Metal is one of the easiest materials</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- features-section end -->
+
+
+        <!-- funfact-section -->
+        <section class="funfact-section bg-color-1 text-center">
+            <div class="pattern-layer" style="background-image: url(assets/images/shapes/shape-3.png);"></div>
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-lg-3 col-md-6 col-sm-12 counter-block">
+                        <div class="counter-block-one wow slideInUp animated animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500" data-stop="7">0</span><span>m</span>
+                            </div>
+                            <h3>Waste Recycled</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 counter-block">
+                        <div class="counter-block-one wow slideInUp animated animated" data-wow-delay="300ms"
+                            data-wow-duration="1500ms">
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500" data-stop="158">0</span>
+                            </div>
+                            <h3>Expert Workers</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 counter-block">
+                        <div class="counter-block-one wow slideInUp animated animated" data-wow-delay="400ms"
+                            data-wow-duration="1500ms">
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500" data-stop="32">0</span>
+                            </div>
+                            <h3>Industries Served</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 counter-block">
+                        <div class="counter-block-one wow slideInUp animated animated" data-wow-delay="600ms"
+                            data-wow-duration="1500ms">
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500" data-stop="4.9">0</span>k<span></span>
+                            </div>
+                            <h3>People Benefited</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- funfact-section end -->
+
+
+        <!-- process-section -->
+        <section class="process-section">
+            <div class="image-layer">
+                <figure class="image-1"><img src="{% static 'assets/images/resources/vactor-1.png' %}" alt=""></figure>
+                <figure class="image-2"><img src="{% static 'assets/images/resources/vactor-2.png' %}" alt=""></figure>
+            </div>
+            <div class="container">
+                <div class="block-title text-center">
+                    <p><span>How It’s Work</span></p>
+                    <h2>How It’s Work</h2>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-3 col-md-6 col-sm-12 single-column">
+                        <div class="single-item wow fadeInUp animated animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="arrow-box"
+                                    style="background-image: url('../static/assets/images/icons/arrow-1.png');">
+                                </div>
+                                <div class="light-icon"><i class="wastey-icon-32"></i></div>
+                                <div class="icon-box"><i class="wastey-icon-28"></i></div>
+                                <span>Step 01</span>
+                                <h3>Waste Assessing</h3>
+                                <p>Ever undertakes laborious physical exercise, except too obtains some advantage from
+                                    it right.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 single-column">
+                        <div class="single-item wow fadeInUp animated animated" data-wow-delay="300ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="arrow-box"
+                                    style="background-image: url('../static/assets/images/icons/arrow-2.png');">
+                                </div>
+                                <div class="light-icon"><i class="wastey-icon-32"></i></div>
+                                <div class="icon-box"><i class="wastey-icon-29"></i></div>
+                                <span>Step 02</span>
+                                <h3>Garbage Collection</h3>
+                                <p>Indignation and dislike men who are so beguileds and demoralized by the of pleasure
+                                    of the moment.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 single-column">
+                        <div class="single-item wow fadeInUp animated animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="arrow-box"
+                                    style="background-image: url('../static/assets/images/icons/arrow-1.png');">
+                                </div>
+                                <div class="light-icon"><i class="wastey-icon-32"></i></div>
+                                <div class="icon-box"><i class="wastey-icon-30"></i></div>
+                                <span>Step 03</span>
+                                <h3>Waste Processing</h3>
+                                <p>These case are perfect simple easy to distinguish. In a free hours, when power choice
+                                    untrammelled.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 single-column">
+                        <div class="single-item wow fadeInUp animated animated" data-wow-delay="300ms"
+                            data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <div class="light-icon"><i class="wastey-icon-32"></i></div>
+                                <div class="icon-box"><i class="wastey-icon-31"></i></div>
+                                <span>Step 04</span>
+                                <h3>Recycling & Disposal</h3>
+                                <p>Repudiated & annoyances accepted the wise man therefore always holds in these matters
+                                    too.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- process-section end -->
+
+
+        <!-- statistics-section -->
+        <section class="statistics-section">
+            <div class="bg-column"
+                style="background-image: url('../static/assets/images/backgrounds/statistics-1.jpg');"></div>
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-lg-6 col-md-12 col-sm-12 experience-column">
+                        <div class="experience-inner">
+                            <div class="block-title white">
+                                <p><span>Statistics</span></p>
+                                <h2>Our Recycling Facts</h2>
+                            </div>
+                            <div class="text">
+                                <p>The point of using lorem ipsum is that it has a more less normal distribution of
+                                    letters, as opposed to using content here.</p>
+                            </div>
+                            <div class="progress-inner">
+                                <div class="progress-box">
+                                    <h4>aluminum</h4>
+                                    <div class="bar">
+                                        <div class="bar-inner count-bar" data-percent="78%"></div>
+                                        <div class="count-text">78%</div>
+                                    </div>
+                                </div>
+                                <div class="progress-box">
+                                    <h4>plastic</h4>
+                                    <div class="bar">
+                                        <div class="bar-inner count-bar" data-percent="63%"></div>
+                                        <div class="count-text">63%</div>
+                                    </div>
+                                </div>
+                                <div class="progress-box">
+                                    <h4>cardboard</h4>
+                                    <div class="bar">
+                                        <div class="bar-inner count-bar" data-percent="95%"></div>
+                                        <div class="count-text">95%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 testimonial-column">
+                        <div class="testimonial-inner">
+                            <div class="block-title">
+                                <p><span>Testimonials</span></p>
+                                <h2>Client’s Reviews</h2>
+                            </div>
+                            <figure class="quote-box"><img src="{% static 'assets/images/icons/quote-1.png' %}" alt="">
+                            </figure>
+                            <div
+                                class="client-testimonial-carousel owl-carousel owl-theme owl-nav-none carousel__dot-one">
+                                <div class="testimonial-content">
+                                    <p>Experience with wastey was fantastic & I would absolutely recommend, extremely
+                                        knowledgeable in waste management.</p>
+                                    <div class="author-info">
+                                        <h3>Reggie Michael</h3>
+                                        <span class="designation">Los Angeles</span>
+                                    </div>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>Experience with wastey was fantastic & I would absolutely recommend, extremely
+                                        knowledgeable in waste management.</p>
+                                    <div class="author-info">
+                                        <h3>Reggie Michael</h3>
+                                        <span class="designation">Los Angeles</span>
+                                    </div>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>Experience with wastey was fantastic & I would absolutely recommend, extremely
+                                        knowledgeable in waste management.</p>
+                                    <div class="author-info">
+                                        <h3>Reggie Michael</h3>
+                                        <span class="designation">Los Angeles</span>
+                                    </div>
+                                </div>
+                                <div class="testimonial-content">
+                                    <p>Experience with wastey was fantastic & I would absolutely recommend, extremely
+                                        knowledgeable in waste management.</p>
+                                    <div class="author-info">
+                                        <h3>Reggie Michael</h3>
+                                        <span class="designation">Los Angeles</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="client-thumb-outer">
+                                <div class="client-thumbs-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
+                                    <div class="thumb-item">
+                                        <figure class="thumb-box">
+                                            <img src="{% static 'assets/images/resources/testi-3-1.png' %}" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="thumb-item">
+                                        <figure class="thumb-box">
+                                            <img src="{% static 'assets/images/resources/testi-3-2.png' %}" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="thumb-item">
+                                        <figure class="thumb-box">
+                                            <img src="{% static 'assets/images/resources/testi-3-3.png' %}" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="thumb-item">
+                                        <figure class="thumb-box">
+                                            <img src="{% static 'assets/images/resources/testi-3-1.png' %}" alt="">
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- statistics-section end -->
+
+
+        <section class="cta-five cta-five__home-one">
+            <div class="image-layer">
+                <figure class="image-1"><img src="{% static 'assets/images/resources/trac-1.png' %}" alt=""></figure>
+                <figure class="image-2"><img src="{% static 'assets/images/resources/cleaner-1.png' %}" alt=""></figure>
+            </div>
+            <div class="container">
+                <div class="content-box">
+                    <i class="wastey-icon-33"></i>
+                    <h3>Touchless junk removal!</h3>
+                    <h2>Curbside Pickup for Up to 25% Off</h2>
+                    <p>We denounce with righteous indignation and dislike men who are so beguiled and <br> demoralized
+                        by
+                        the charms of pleasure of the moment.</p>
+                    <ul class="cta-five__list list-unstyled">
+                        <li>100% Touchless Pickup</li>
+                        <li>Virtual Estimates</li>
+                        <li>No Contact Payment</li>
+                    </ul><!-- /.cta-five__list list-unstyled -->
+                    <a href="#" class="thm-btn cta-five__btn">More Details</a><!-- /.thm-btn cta-five__btn -->
+                </div>
+            </div><!-- /.container -->
+        </section><!-- /.cta-five -->
+
+
+        <section class="blog-grid blog-grid__home">
+            <div class="container">
+                <div class="blog-grid__top">
+                    <div class="block-title">
+                        <p><span>News & Resources</span></p>
+                        <h2>Read Our Latest News</h2>
+                    </div><!-- /.block-title -->
+                    <div class="blog-grid__more-link">
+                        <a href="blog-grid.html">More From Blog <i class="fa fa-angle-right"></i></a>
+                    </div><!-- /.blog-grid__more-link -->
+                </div><!-- /.blog-grid__top -->
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="blog-two__single wow fadeInUp animated animated" data-wow-delay="00ms"
+                            data-wow-duration="1500ms">
+                            <div class="blog-two__image">
+                                <img src="{% static 'assets/images/blog/blog-2-1.jpg' %}" alt="">
+                                <a href="blog-details.html"><i class="wastey-icon-80"></i></a>
+                                <a href="blog-details.html" class="blog-two__more-link">Read More</a>
+                            </div><!-- /.blog-two__image -->
+                            <div class="blog-two__content">
+                                <div class="blog-one__category">IN: <a href="#">Garbage Removal</a></div>
+                                <!-- /.blog-one__category -->
+                                <h3><a href="blog-details.html">Got Junk? Time For Dumpster
+                                        Rental in Scrapy.</a>
+                                </h3>
+                                <div class="blog-two__meta">
+                                    <a href="#"><i class="far fa-calendar-alt"></i>10.05.2021</a>
+                                    <a href="#"><i class="far fa-user"></i>By Archer Corvin</a>
+                                </div><!-- /.blog-two__meta -->
+                            </div><!-- /.blog-two__content -->
+                        </div><!-- /.blog-two__single -->
+                    </div><!-- /.col-lg-4 col-md-6 col-sm-12 -->
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="blog-two__single wow fadeInUp animated animated" data-wow-delay="300ms"
+                            data-wow-duration="1500ms">
+                            <div class="blog-two__image">
+                                <img src="{% static 'assets/images/blog/blog-2-2.jpg' %}" alt="">
+                                <a href="blog-details.html"><i class="wastey-icon-80"></i></a>
+                                <a href="blog-details.html" class="blog-two__more-link">Read More</a>
+                            </div><!-- /.blog-two__image -->
+                            <div class="blog-two__content">
+                                <div class="blog-one__category">IN: <a href="#">Garbage Removal</a></div>
+                                <!-- /.blog-one__category -->
+                                <h3><a href="blog-details.html">Can You Still Get Large Trash Pickup? Yes, You Can!</a>
+                                </h3>
+                                <div class="blog-two__meta">
+                                    <a href="#"><i class="far fa-calendar-alt"></i>10.05.2021</a>
+                                    <a href="#"><i class="far fa-user"></i>By Archer Corvin</a>
+                                </div><!-- /.blog-two__meta -->
+                            </div><!-- /.blog-two__content -->
+                        </div><!-- /.blog-two__single -->
+                    </div><!-- /.col-lg-4 col-md-6 col-sm-12 -->
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="blog-two__single wow fadeInUp animated animated" data-wow-delay="600ms"
+                            data-wow-duration="1500ms">
+                            <div class="blog-two__image">
+                                <img src="{% static 'assets/images/blog/blog-2-3.jpg' %}" alt="">
+                                <a href="blog-details.html"><i class="wastey-icon-80"></i></a>
+                                <a href="blog-details.html" class="blog-two__more-link">Read More</a>
+                            </div><!-- /.blog-two__image -->
+                            <div class="blog-two__content">
+                                <div class="blog-one__category">IN: <a href="#">Garbage Removal</a></div>
+                                <!-- /.blog-one__category -->
+                                <h3><a href="blog-details.html">What Does the NY Plastic Bag
+                                        Ban Mean for You?</a>
+                                </h3>
+                                <div class="blog-two__meta">
+                                    <a href="#"><i class="far fa-calendar-alt"></i>10.05.2021</a>
+                                    <a href="#"><i class="far fa-user"></i>By Archer Corvin</a>
+                                </div><!-- /.blog-two__meta -->
+                            </div><!-- /.blog-two__content -->
+                        </div><!-- /.blog-two__single -->
+                    </div><!-- /.col-lg-4 col-md-6 col-sm-12 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.blog-grid -->
+
+        <section class="brand-one">
+            <div class="container">
+                <div class="block-title text-center">
+                    <p><span>Our Partners</span></p>
+                    <h2>Our Partners</h2>
+
+                </div><!-- /.block-title -->
+                <div class="owl-theme owl-carousel thm__owl-carousel carousel__dot-one" data-options='{
+                    "dots": false, "items": 5, "margin": 75, "autoPlay": true, "autoplayHoverPause": true, "dots": true, "autoplayTimeout": 5000, "smartSpeed": 700, "responsive": {
+                        "0": {
+                            "items": 1,
+                            "margin": 0
+                        },
+                        "375": {
+                            "items": 1,
+                            "margin": 0
+                        },
+                        "480": {
+                            "items": 2,
+                            "margin": 30
+                        },
+                        "767": {
+                            "items": 3,
+                            "margin": 30
+                        },
+                        "991": {
+                            "items": 5,
+                            "margin": 75
+                        }
+                    }
+                }'>
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-1.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-2.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-3.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-4.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-5.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-1.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-2.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-3.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-4.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-5.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-1.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-2.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-3.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-4.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-5.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-1.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-2.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-3.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-4.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-1-5.png' %}" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                </div><!-- /.owl-theme owl-carousel thm__owl-carousel -->
+            </div><!-- /.container -->
+        </section><!-- /.brand-one -->
+
+        <section class="contact-one contact-one__home-one">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="case-three__carousel-wrap">
+                            <div class="block-title">
+                                <p><span>Case Studies</span></p>
+                                <h2>How We Drive Value for <br>
+                                    Our Clients</h2>
+                                <div class="block-title__text">Point of using lorem ipsum is that it has a more-or-less
+                                    normal distribution
+                                    of letters, as opposed using Content here.</div>
+                                <!-- /.block-title__text -->
+                            </div><!-- /.block-title -->
+                            <div class="thm__owl-carousel owl-carousel owl-theme carousel__dot-one case-three__carousel"
+                                data-options='{"items": 1, "margin": 0, "autoplay": true, "autoplayTimeout": 5000, "autoplayHoverPause": true, "dots": true, "nav": false}'>
+                                <div class="item">
+                                    <div class="case-two__single">
+                                        <div class="case-two__image"
+                                            style="background-image: url('../static/assets/images/case/case-3-1.jpg'  );">
+                                        </div><!-- /.case-two__image -->
+                                        <div class="case-two__content">
+                                            <a href="case-details.html" class="case-two__more-link"><i
+                                                    class="far fa-angle-right"></i></a>
+                                            <div class="case-two__meta">
+                                                <a href="case-details.html">Government</a>
+                                            </div><!-- /.case-two__meta -->
+                                            <h3><a href="case-details.html">Material Recovery</a></h3>
+                                        </div><!-- /.case-two__content -->
+                                    </div><!-- /.case-two__single -->
+                                </div><!-- /.item -->
+                                <div class="item">
+                                    <div class="case-two__single">
+                                        <div class="case-two__image"
+                                            style="background-image: url('../static/assets/images/case/case-3-1.jpg');">
+                                        </div><!-- /.case-two__image -->
+                                        <div class="case-two__content">
+                                            <a href="case-details.html" class="case-two__more-link"><i
+                                                    class="far fa-angle-right"></i></a>
+                                            <div class="case-two__meta">
+                                                <a href="case-details.html">Government</a>
+                                            </div><!-- /.case-two__meta -->
+                                            <h3><a href="case-details.html">Material Recovery</a></h3>
+                                        </div><!-- /.case-two__content -->
+                                    </div><!-- /.case-two__single -->
+                                </div><!-- /.item -->
+                                <div class="item">
+                                    <div class="case-two__single">
+                                        <div class="case-two__image"
+                                            style="background-image: url('../static/assets/images/case/case-3-1.jpg');">
+                                        </div><!-- /.case-two__image -->
+                                        <div class="case-two__content">
+                                            <a href="case-details.html" class="case-two__more-link"><i
+                                                    class="far fa-angle-right"></i></a>
+                                            <div class="case-two__meta">
+                                                <a href="case-details.html">Government</a>
+                                            </div><!-- /.case-two__meta -->
+                                            <h3><a href="case-details.html">Material Recovery</a></h3>
+                                        </div><!-- /.case-two__content -->
+                                    </div><!-- /.case-two__single -->
+                                </div><!-- /.item -->
+                                <div class="item">
+                                    <div class="case-two__single">
+                                        <div class="case-two__image"
+                                            style="background-image: url('../static/assets/images/case/case-3-1.jpg');">
+                                        </div><!-- /.case-two__image -->
+                                        <div class="case-two__content">
+                                            <a href="case-details.html" class="case-two__more-link"><i
+                                                    class="far fa-angle-right"></i></a>
+                                            <div class="case-two__meta">
+                                                <a href="case-details.html">Government</a>
+                                            </div><!-- /.case-two__meta -->
+                                            <h3><a href="case-details.html">Material Recovery</a></h3>
+                                        </div><!-- /.case-two__content -->
+                                    </div><!-- /.case-two__single -->
+                                </div><!-- /.item -->
+                            </div>
+                            <!-- /.thm__owl-carousel owl-carousel owl-theme carousel__dot-one case-three__carousel -->
+                        </div><!-- /.case-three__carousel-wrap -->
+                    </div><!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                        <form action="{% url 'contact' %}" method="POST" class="wow fadeInLeft contact-one__form contact-form-validated">
+                            {% csrf_token %}
+                            <div class="contact-one__form-inner">
+                                <div class="block-title">
+                                    <p><span>Get In Touch</span></p>
+                                    <h3>Send Your Message</h3>
+                                </div><!-- /.block-title -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input type="text" name="name" placeholder="Your Name *">
+                                    </div><!-- /.col-md-12 -->
+                                    <div class="col-md-6">
+                                        <input type="text" name="email" placeholder="Email *">
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-6">
+                                        <input type="text" name="phone" placeholder="Phone">
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-12">
+                                        <input type="text" name="subject" placeholder="Subject">
+                                    </div><!-- /.col-md-12 -->
+                                    <div class="col-lg-12">
+                                        <textarea name="message" placeholder="Write Message ..."></textarea>
+                                    </div><!-- /.col-lg-12 -->
+                                    <div class="col-lg-12">
+                                        <button type="submit" class="thm-btn">Send Message</button>
+                                    </div><!-- /.col-lg-12 -->
+                                </div><!-- /.row -->
+                            </div><!-- /.contact-one__form-inner -->
+                        </form><!-- /.contact-one__form -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.contact-one -->
+
+        <section class="main-footer-wrap">
+            <div class="main-footer__bg"
+                style="background-image: url('../static/assets/images/backgrounds/footer-bg-1-1.jpg');">
+            </div><!-- /.main-footer__bg -->
+            <section class="cta-one">
+                <div class="container wow fadeInUp" data-wow-duration="1500ms">
+                    <div class="inner-container"
+                        style="background-image: url('../static/assets/images/backgrounds/cta-bg-1-1.jpg');">
+                        <div class="cta-one__content">
+                            <h3>We Provide Superior Value, Service & Effort.</h3>
+                            <p>Combined with a handful of model sentence structures, to generate.</p>
+                        </div><!-- /.cta-one__content -->
+                        <div class="cta-one__btn-block">
+                            <a href="{% url 'services' %}" class="thm-btn">More Details</a>
+                        </div><!-- /.cta-one__btn-block -->
+                    </div><!-- /.inner-container -->
+                </div><!-- /.container -->
+            </section><!-- /.cta-one -->
+
+            <footer class="site-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3">
+                            <div class="footer-widget">
+                                <a href="{% url 'home' %}" class="footer-widget__logo">
+                                    <img src="{% static 'assets/images/logo-1-2.png' %}" alt="">
+                                </a>
+                                <p>There are many variations passages lorem ipsumd available the majority have suffered
+                                    alterationd some form by injected humour, or randomised words which don't look even
+                                    slightly believable. <a href="{% url 'our_story' %}">Read More ...</a></p>
+                                <div class="footer-widget__review">
+                                    <h3>Excellent</h3>
+                                    <div class="footer-widget__review-stars">
+                                        <i class="wastey-icon-52"></i>
+                                        <i class="wastey-icon-52"></i>
+                                        <i class="wastey-icon-52"></i>
+                                        <i class="wastey-icon-52"></i>
+                                        <i class="wastey-icon-52"></i>
+                                    </div><!-- /.footer-widget__review-stars -->
+                                    <p>Based On 2,518 Reviews</p>
+                                    <span class="footer-widget__review-count">
+                                        4.9
+                                    </span>
+                                </div><!-- /.footer-widget__review -->
+                            </div><!-- /.footer-widget -->
+                        </div><!-- /.col-lg-3 -->
+                        <div class="col-xl-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="footer-widget">
+                                        <h3 class="footer-widget__title"><span>Our Services</span></h3>
+                                        <!-- /.footer-widget__title -->
+                                        <ul class="list-unstyled footer-widget__list">
+                                            <li><a href = "{% url 'waste_removal' %}">Recurring Waste Services</a></li>
+                                            <li><a href="{% url 'rent_dumpster' %}">Dumpster Rentals</a></li>
+                                            <li><a href="{% url 'on_demand' %}">On Demand Collection</a></li>
+                                            <li><a href="{% url 'technology' %}">Technology</a></li>
+                                            <li><a href="ser-d-sustain.html">Sustainability Programs</a></li>
+                                            <li><a href="{% url 'zero_waste' %}">Zero Waste</a></li>
+                                        </ul><!-- /.list-unstyled footer-widget__list -->
+                                    </div><!-- /.footer-widget -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="footer-widget">
+                                        <h3 class="footer-widget__title"><span>Useful Links</span></h3>
+                                        <!-- /.footer-widget__title -->
+                                        <ul class="list-unstyled footer-widget__list">
+                                            <li><a href="{% url 'our_story' %}">About Company</a></li>
+                                            <li><a href="case-1.html">Projects</a></li>
+                                            <li><a href="{% url 'team' %}">Team</a></li>
+                                            <li><a href="blog-listing.html">News & Updates</a></li>
+                                            <li><a href="{% url 'f&q' %}">Help & Support</a></li>
+                                            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                                        </ul><!-- /.list-unstyled footer-widget__list -->
+
+                                    </div><!-- /.footer-widget -->
+                                </div><!-- /.col-md-6 -->
+                            </div><!-- /.row -->
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <form action="#" class="footer-widget__subscribe-form mc-form"
+                                        data-url="https://xyz.us18.list-manage.com/subscribe/post?u=20e91746ef818cd941998c598&amp;id=cc0ee8140e">
+                                        <input type="email" class="formInput" placeholder="Your Email Address">
+                                        <button type="submit">Subscribe Us</button>
+                                        <div class="mc-form__response"></div><!-- /.mc-form__response -->
+                                    </form><!-- /.footer-widget__subscribe-form -->
+                                </div><!-- /.col-lg-12 -->
+                            </div><!-- /.row -->
+
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-xl-3">
+                            <div class="footer-widget footer-widget__contact">
+                                <h3 class="footer-widget__title"><span>Contact Us</span></h3>
+                                <!-- /.footer-widget__title -->
+                                <ul class="footer-widget__contact-list list-unstyled">
+                                    <li>
+                                        <i class="wastey-icon-2"></i>
+                                        Po box 12345 <br>
+                                        654 Varick Str, BLN 11210
+                                    </li>
+                                    <li>
+                                        <i class="wastey-icon-4"></i>
+                                        <a href="tel:+800-456-78-901">+800 456 78 901</a>
+                                        <a href="mailto:info@junkbuster.com">info@junkbuster.com </a>
+                                    </li>
+                                    <li>
+                                        <i class="wastey-icon-3"></i>
+                                        Opening Hrs: <br> Mon-Sat: 9.00am to 7.00pm
+                                    </li>
+                                    <li>
+                                        <i class="wastey-icon-2"></i>
+                                        <span>Connect With Us</span>
+                                        <div class="footer-widget__social">
+                                            <a href="#" class="fab fa-facebook-f"></a>
+                                            <a href="#" class="fab fa-twitter"></a>
+                                            <a href="#" class="fab fa-linkedin-in"></a>
+                                        </div><!-- /.footer-widget__social -->
+                                    </li>
+                                </ul><!-- /.footer-widget__contact-list list-unstyled -->
+                            </div><!-- /.footer-widget -->
+                        </div><!-- /.col-lg-3 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </footer><!-- /.site-footer -->
+        </section><!-- /.main-footer-wrap -->
+        <div class="site-footer__bottom">
+            <div class="container">
+                <p>Copyright © 2021 All Rights Reserved by <a href="{% url 'home' %}">Scrapy.</a></p>
+                <ul class="list-unstyled site-footer__bottom-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms + Conditions</a></li>
+                </ul><!-- /.list-unstyled -->
+            </div><!-- /.container -->
+        </div><!-- /.site-footer__bottom -->
+
+    </div><!-- /.page-wrapper -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <div class="side-menu__block">
+
+        <a href="#" class="side-menu__toggler side-menu__close-btn"><i class="fa fa-times"></i>
+            <!-- /.fa fa-close --></a>
+
+        <div class="side-menu__block-overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+
+            <a href="{% url 'home' %}" class="side-menu__logo"><img src="{% static 'assets/images/logo-1-2.png' %}"
+                    alt=""></a>
+            <nav class="mobile-nav__container">
+                <!-- content is loading via js -->
+            </nav>
+            <p class="side-menu__block__copy">(c) 2021 <a href="#">Scrapy</a> - All rights reserved.</p>
+            <div class="side-menu__social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-google-plus"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+
+
+    <div class="side-content__block">
+        <div class="side-content__block-overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-content__block-overlay -->
+        <a href="#" class="wastey-icon-6 side-content__close"></a>
+        <div class="side-content__block-inner ">
+            <div class="side-content__top">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'assets/images/logo-1-1.png' %}" alt="">
+                </a>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                    looking.</p>
+                <a href="#" class="side-content__download">
+                    <i class="wastey-icon-73"></i>
+                    Company Profile
+                    <span>48 KB</span>
+                </a>
+            </div><!-- /.side-content__top -->
+            <div class="side-content__content">
+                <div class="side-content__title">
+                    <h3><span>Download App</span></h3>
+                </div><!-- /.side-content__title -->
+                <div class="side-content__app">
+                    <img src="{% static 'assets/images/shapes/side-content-moc-1-1.png' %}" alt="">
+                    <div class="side-content__app-btns">
+                        <a href="#" class="side-content__btn">Download</a><!-- /.side-content__btn -->
+                        <a href="#" class="side-content__btn">How It’s Work</a><!-- /.side-content__btn -->
+                    </div><!-- /.side-content__app-btns -->
+                </div><!-- /.side-content__app -->
+                <div class="side-content__social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-google-plus"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+                <p>Copyright © 2021 All Rights Reserved.</p>
+            </div><!-- /.side-content__content -->
+        </div><!-- /.side-content__block-inner -->
+    </div><!-- /.side-content__block -->
+
+    <div class="search-popup" style="display: none;">
+        <div class="search-popup__overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.search-popup__overlay -->
+        <div class="search-popup__inner">
+            <form action="#" class="search-popup__form">
+                <input type="text" name="search" placeholder="Type here to Search....">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div><!-- /.search-popup__inner -->
+    </div><!-- /.search-popup -->
+
+
+    <!-- plugins Scripts -->
+    <script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/TweenMax.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/appear.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.countTo.js' %}"></script>
+    <script src="{% static 'assets/js/theme.js' %}"></script>
+
+</body>
+
+</html>

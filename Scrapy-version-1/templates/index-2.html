@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrapy || Waste Pickup Service HTML Template</title>
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicons/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'assets/images/favicons/site.webmanifest' %}">
+
+    <!-- plugins Styles -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Yantramanav:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap-select.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/jquery.mCustomScrollbar.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/wastey-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+
+    <!-- template Styles -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+
+</head>
+
+<body>
+
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div><!-- /.preloader -->
+
+    <div class="page-wrapper">
+
+        <header class="header-style-two">
+            <div class="header-top">
+                <div class="container">
+                    <div class="top-inner clearfix">
+                        <div class="left-column pull-left">
+                            <figure class="logo"><a href="{% url 'home' %}"><img src="assets/images/logo-2.png" alt=""></a></figure>
+                        </div>
+                        <div class="right-column pull-right">
+                            <ul class="info-list clearfix">
+                                <li class="topbar-one__select-box">
+                                    <i class="wastey-icon-2"></i>
+                                    <select class="selectpicker">
+                                        <option value="branch-1">Locations</option>
+                                        <option value="branch-2">California</option>
+                                        <option value="branch-3">Melbourn</option>
+                                        <option value="branch-4">New York</option>
+                                    </select>
+                                </li>
+                                <li class="pickup-btn">
+                                    <a href="index-2.html"><i class="wastey-icon-36"></i>Waste Pickup</a>
+                                </li>
+                                <li class="support-btn">
+                                    <a href="tel:800456789"><i class="wastey-icon-4"></i> +800 - 45 - 6789</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-one stricky">
+                <div class="container clearfix">
+                    <div class="menu-area pull-left">
+                        <span class="side-menu__toggler fa fa-bars"></span>
+                        <nav class="header-one__menu main-nav__main-navigation">
+                            <ul class="header-one__menu-list main-nav__navigation-box">
+                                <li class="dropdown">
+                                    <a href="{% url 'home' %}">Home</a>
+                                    <ul>
+                                        <li><a href="{% url 'home' %}">Home Page 01</a></li>
+                                        <li><a href="index-2.html">Home Page 02</a></li>
+                                        <li><a href="index-3.html">Home Page 03</a></li>
+                                    </ul>
+                                </li><!-- /.dropdown -->
+                                <li class="dropdown">
+                                    <a href="#">About</a>
+                                    <ul>
+                                        <li><a href="{% url 'our_story' %}">Our Story</a></li>
+                                        <li><a href="{% url 'company_value' %}">Company Values</a></li>
+                                        <li><a href="{% url 'team' %}">Team</a></li>
+                                        <li><a href="{% url 'career' %}">Career</a></li>
+                                    </ul>
+                                </li><!-- /.dropdown -->
+                                <li class="dropdown">
+                                    <a href="{% url 'services' %}">Services</a>
+                                    <ul>
+                                        <li><a href="{% url 'services' %}">All Services</a></li>
+                                        <li><a href = "{% url 'waste_removal' %}">Waste Removal</a></li>
+                                        <li><a href="{% url 'rent_dumpster' %}">Dumpster Rentals</a></li>
+                                        <li><a href="{% url 'on_demand' %}">On-Demand Collection</a></li>
+                                        <li><a href="{% url 'zero_waste' %}">Zero Waste</a></li>
+                                        <li><a href="{% url 'technology' %}">Technology</a></li>
+                                    </ul>
+                                </li><!-- /.dropdown -->
+                                <li class="dropdown">
+                                    <a href="{% url 'industries' %}">Industries</a>
+                                    <ul>
+                                        <li><a href="{% url 'industries' %}">All Industries</a></li>
+                                        <li><a href="{% url 'industries_grocery' %}">Grocery Stores</a></li>
+                                        <li><a href="{% url 'industries_medical' %}">Medical & Hospital</a></li>
+                                        <li><a href="{% url 'industries_hotel' %}">Hotel & Restaurant</a></li>
+                                        <li><a href="{% url 'industries_munci' %}">Municipalities</a></li>
+                                        <li><a href="{% url 'industries_mall' %}">Mall & Theatre</a></li>
+                                        <li><a href="{% url 'industries_stadium' %}">Stadium & Event</a></li>
+                                    </ul>
+                                </li><!-- /.dropdown -->
+                                <li class="dropdown">
+                                    <a href="#">Pages</a>
+                                    <ul>
+                                        <li class="dropdown"><a href="blog-grid.html">Blog</a>
+                                            <ul>
+                                                <li><a href="blog-grid.html">Blog Grid</a></li>
+                                                <li><a href="blog-listing.html">Blog Listing</a></li>
+                                                <li><a href="blog-masonary.html">Blog Masonry</a></li>
+                                                <li><a href="blog-details.html">Single Post</a></li>
+                                            </ul><!-- /.dropdown -->
+                                        </li>
+                                        <li class="dropdown"><a href="case-1.html">Case Studies</a>
+                                            <ul>
+                                                <li><a href="case-1.html">Case Studies 01</a></li>
+                                                <li><a href="case-2.html">Case Studies 02</a></li>
+                                                <li><a href="case-details.html">Case Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="{% url 'f&q' %}">FAQ’s</a></li>
+                                    </ul>
+                                </li><!-- /.dropdown -->
+                                <li>
+                                    <a href="{% url 'contact' %}">Contact</a>
+                                </li><!-- /.dropdown -->
+                            </ul><!-- /.header-one__menu-list -->
+                        </nav><!-- /.header-one__menu -->
+                    </div>
+                    <div class="menu-right-content pull-right">
+                        <ul class="social-links">
+                            <li><a href="index-2.html"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a href="index-2.html"><i class="fab fa-twitter-square"></i></a></li>
+                            <li><a href="index-2.html"><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href="index-2.html"><i class="fab fa-pinterest-square"></i></a></li>
+                        </ul>
+                        <div class="search-box-outer">
+                            <div class="dropdown">
+                                <button class="search-box-btn" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="wastey-icon-54"></i></button>
+                                <div class="dropdown-menu search-panel" aria-labelledby="dropdownMenu3">
+                                    <div class="form-container">
+                                        <form method="post" action="blog.html">
+                                            <div class="form-group">
+                                                <input type="search" name="search-field" value="" placeholder="Search...." required="">
+                                                <button type="submit" class="search-btn"><span class="fas fa-search"></span></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.container -->
+            </div>
+        </header><!-- /.header-one -->
+
+
+        <!-- banner-section -->
+        <section class="banner-section style-two">
+            <div class="banner-carousel-2 owl-theme owl-carousel owl-dots-none">
+                <div class="slide-item">
+                    <div class="image-layer" style="background-image:url(assets/images/banner/banner-4.jpg)"></div>
+                    <div class="container">
+                        <div class="content-box">
+                            <h5>No Compromise In Service</h5>
+                            <h1>Reliable and <span>Affordable</span> Services</h1>
+                            <p>Top Rated Waste Managment Service Brand in City.</p>
+                            <div class="btn-box">
+                                <a href="{% url 'home' %}" class="thm-btn banner-btn">More Details</a>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+                <div class="slide-item">
+                    <div class="image-layer" style="background-image:url(assets/images/banner/banner-5.jpg)"></div>
+                    <div class="container clearfix">
+                        <div class="content-box">
+                            <h5>We take Just About Everything</h5>
+                            <h1>Driven By <span>Commitments</span> Guided By Values</h1>
+                            <p>Top Rated Waste Managment Service Brand in City.</p>
+                            <div class="btn-box">
+                                <a href="{% url 'home' %}" class="thm-btn banner-btn">More Details</a>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                <div class="slide-item">
+                    <div class="image-layer" style="background-image:url(assets/images/banner/banner-6.jpg)"></div>
+                    <div class="container">
+                        <div class="content-box">
+                            <h5>Reliable recycling pickup</h5>
+                            <h1>Residential & <span>Commercial</span> Service</h1>
+                            <p>Top Rated Waste Managment Service Brand in City.</p>
+                            <div class="btn-box">
+                                <a href="{% url 'home' %}" class="thm-btn banner-btn">More Details</a>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- banner-section end -->
+
+
+        <!-- workin-area-two -->
+        <section class="workin-area-two bg-color-1">
+            <div class="container">
+                <div class="inner-container">
+                    <div class="row clearfix">
+                        <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                            <div class="single-item wow fadeInLeft animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <h3>Municipality Waste Disposal</h3>
+                                    <div class="inner">
+                                        <div class="icon-box"><i class="wastey-icon-38"></i></div>
+                                        <p>Ever undertake laborious physical exercise except to obtain some advantage from it.</p>
+                                        <a href="index-2.html">Read More<i class="wastey-icon-37"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                            <div class="single-item wow fadeInRight animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                <div class="inner-box">
+                                    <h3>Business Waste Disposal</h3>
+                                    <div class="inner">
+                                        <div class="icon-box"><i class="wastey-icon-39"></i></div>
+                                        <p>Ever undertake laborious physical exercise except to obtain some advantage from it.</p>
+                                        <a href="index-2.html">Read More<i class="wastey-icon-37"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- workin-area-two -->
+
+        
+        <!-- industries-section -->
+        <section class="industries-section home-2 bg-color-1">
+            <div class="container">
+                <div class="block-title text-center">
+                    <p><span>Industries</span></p>
+                    <h2>Service for the Industries</h2>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-4 col-md-6 col-sm-12 industries-block">
+                        <div class="industries-one__single wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="industries-one__image">
+                                <img src="assets/images/industries/industries-1-1.jpg" alt="">
+                            </div><!-- /.industries-one__image -->
+                            <div class="industries-one__content">
+                                <div class="industries-one__content-left">
+                                    <h3><a href="{% url 'industries_grocery' %}">Grocery Stores</a></h3>
+                                    <p>Actual teachings of great explorer truth, the master-builder.</p>
+                                </div><!-- /.industries-one__content-left -->
+                                <div class="industries-one__content-right">
+                                    <div class="industries-one__icon">
+                                        <i class="wastey-icon-19"></i>
+                                    </div><!-- /.industries-one__icon -->
+                                    <div class="industries-one__more-link">
+                                        <i class="wastey-icon-59"></i>
+                                    </div><!-- /.industries-one__more-link -->
+                                </div><!-- /.industries-one__content-right -->
+                                <div class="industries-one__content-hover">
+                                    <i class="wastey-icon-19"></i>
+                                    <a href="{% url 'industries_grocery' %}"><i class="wastey-icon-59"></i>Details</a>
+                                </div><!-- /.industries-one__content-hover -->
+                            </div><!-- /.industries-one__content -->
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 industries-block">
+                        <div class="industries-one__single wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                            <div class="industries-one__image">
+                                <img src="assets/images/industries/industries-1-2.jpg" alt="">
+                            </div><!-- /.industries-one__image -->
+                            <div class="industries-one__content">
+                                <div class="industries-one__content-left">
+                                    <h3><a href="{% url 'industries_medical' %}">Medical & Hospital</a></h3>
+                                    <p>Actual teachings of great explorer truth, the master-builder.</p>
+                                </div><!-- /.industries-one__content-left -->
+                                <div class="industries-one__content-right">
+                                    <div class="industries-one__icon">
+                                        <i class="wastey-icon-20"></i>
+                                    </div><!-- /.industries-one__icon -->
+                                    <div class="industries-one__more-link">
+                                        <i class="wastey-icon-59"></i>
+                                    </div><!-- /.industries-one__more-link -->
+                                </div><!-- /.industries-one__content-right -->
+                                <div class="industries-one__content-hover">
+                                    <i class="wastey-icon-20"></i>
+                                    <a href="{% url 'industries_medical' %}"><i class="wastey-icon-59"></i>Details</a>
+                                </div><!-- /.industries-one__content-hover -->
+                            </div><!-- /.industries-one__content -->
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 industries-block">
+                        <div class="industries-one__single wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                            <div class="industries-one__image">
+                                <img src="assets/images/industries/industries-1-3.jpg" alt="">
+                            </div><!-- /.industries-one__image -->
+                            <div class="industries-one__content">
+                                <div class="industries-one__content-left">
+                                    <h3><a href="{% url 'industries_hotel' %}">Hotel & Restaurant</a></h3>
+                                    <p>Actual teachings of great explorer truth, the master-builder.</p>
+                                </div><!-- /.industries-one__content-left -->
+                                <div class="industries-one__content-right">
+                                    <div class="industries-one__icon">
+                                        <i class="wastey-icon-21"></i>
+                                    </div><!-- /.industries-one__icon -->
+                                    <div class="industries-one__more-link">
+                                        <i class="wastey-icon-59"></i>
+                                    </div><!-- /.industries-one__more-link -->
+                                </div><!-- /.industries-one__content-right -->
+                                <div class="industries-one__content-hover">
+                                    <i class="wastey-icon-21"></i>
+                                    <a href="{% url 'industries_hotel' %}"><i class="wastey-icon-59"></i>Details</a>
+                                </div><!-- /.industries-one__content-hover -->
+                            </div><!-- /.industries-one__content -->
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-box text-center">
+                    <a href="{% url 'industries' %}" class="thm-btn btn-one">All Industries</a>
+                    <a href="{% url 'contact' %}" class="thm-btn btn-two">Get In Touch</a>
+                </div>
+            </div><!-- /.container -->
+        </section>
+        <!-- industries-section end -->
+
+
+        <!-- about-style-two -->
+        <section class="about-style-two">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                        <div class="image-box">
+                            <figure class="image image-1"><img src="{% static 'assets/images/resources/about-2.jpg" alt=""></figure>
+                            <figure class="image image-2"><img src="{% static 'assets/images/resources/about-1.png" alt=""></figure>
+                            <figure class="image image-3"><img src="{% static 'assets/images/resources/iso-logo.png" alt=""></figure>
+                            <div class="image-content">
+                                <div class="icon-box"><i class="wastey-icon-40"></i></div>
+                                <h2>07 <span>Years</span></h2>
+                                <h6>Experience in fileld</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                        <div class="content-box">
+                            <div class="block-title">
+                                <p><span>Who We Are</span></p>
+                                <h2>Leading Waste Disposal Brand in City</h2>
+                            </div>
+                            <h3>Started at BLN, Serve Since 2004 With Passion.</h3>
+                            <div class="text">
+                                <p>We denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment blinded by desires that they cannot foresee the pain and trouble.</p>
+                            </div>
+                            <div class="author-info">
+                                <figure class="author-thumb">
+                                    <img src="{% static 'assets/images/resources/author-1.png" alt="">
+                                    <a href="index-2.html"><i class="fab fa-facebook-f"></i></a>
+                                </figure>
+                                <h3>Primera Z. Caldwell</h3>
+                                <span class="designation">President & Chief Executive Officer</span>
+                            </div>
+                            <div class="more-link"><a href="{% url 'our_story' %}">Read More About Us</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- about-style-two end -->
+
+
+        <!-- service-section -->
+        <section class="service-section bg-color-2">
+            <div class="container">
+                <div class="title-inner text-center">
+                    <div class="block-title light">
+                        <p><span>Ideal solutions</span></p>
+                        <h2>Redefining Waste Services</h2>
+                    </div>
+                    <div class="text">
+                        <p>The point of using lorem ipsum is that it has a more-or-less normal distribution of letters, as opposed <br />using Content here, content here making it look like readable.</p>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box">
+                                    <img src="assets/images/services/service-1.jpg" alt="">
+                                    <div class="overlay-icon icon"><i class="wastey-icon-14"></i></div>
+                                    <div class="icon-box icon"><i class="wastey-icon-14"></i></div>
+                                </figure>
+                                <div class="lower-content">
+                                    <h3><a href = "{% url 'waste_removal' %}">Recurring Waste Services</a></h3>
+                                    <div class="link"><a href = "{% url 'waste_removal' %}">More Details</a></div>
+                                </div>
+                                <div class="overlay-content">
+                                    <h3><a href = "{% url 'waste_removal' %}">Recurring Waste Services</a></h3>
+                                    <p>Actual teachings of explorer truth master-builder.</p>
+                                    <div class="link"><a href = "{% url 'waste_removal' %}"><span></span>More Details</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box">
+                                    <img src="assets/images/services/service-2.jpg" alt="">
+                                    <div class="overlay-icon icon"><i class="wastey-icon-15"></i></div>
+                                    <div class="icon-box icon"><i class="wastey-icon-15"></i></div>
+                                </figure>
+                                <div class="lower-content">
+                                    <h3><a href="{% url 'rent_dumpster' %}">Dumster Rental Services</a></h3>
+                                    <div class="link"><a href="{% url 'rent_dumpster' %}">More Details</a></div>
+                                </div>
+                                <div class="overlay-content">
+                                    <h3><a href="{% url 'rent_dumpster' %}">Dumster Rental Services</a></h3>
+                                    <p>Actual teachings of explorer truth master-builder.</p>
+                                    <div class="link"><a href="{% url 'rent_dumpster' %}"><span></span>More Details</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box">
+                                    <img src="assets/images/services/service-3.jpg" alt="">
+                                    <div class="overlay-icon icon"><i class="wastey-icon-16"></i></div>
+                                    <div class="icon-box icon"><i class="wastey-icon-16"></i></div>
+                                </figure>
+                                <div class="lower-content">
+                                    <h3><a href="{% url 'on_demand' %}">On - Demand Trash Collection</a></h3>
+                                    <div class="link"><a href="{% url 'on_demand' %}">More Details</a></div>
+                                </div>
+                                <div class="overlay-content">
+                                    <h3><a href="{% url 'on_demand' %}">On - Demand Trash Collection</a></h3>
+                                    <p>Actual teachings of explorer truth master-builder.</p>
+                                    <div class="link"><a href="{% url 'on_demand' %}"><span></span>More Details</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 service-block">
+                        <div class="service-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                            <div class="inner-box">
+                                <figure class="image-box">
+                                    <img src="assets/images/services/service-4.jpg" alt="">
+                                    <div class="overlay-icon icon"><i class="wastey-icon-41"></i></div>
+                                    <div class="icon-box icon"><i class="wastey-icon-41"></i></div>
+                                </figure>
+                                <div class="lower-content">
+                                    <h3><a href="{% url 'zero_waste' %}">Zero Waste Services</a></h3>
+                                    <div class="link"><a href="{% url 'zero_waste' %}">More Details</a></div>
+                                </div>
+                                <div class="overlay-content">
+                                    <h3><a href="{% url 'zero_waste' %}">Zero Waste Services</a></h3>
+                                    <p>Actual teachings of explorer truth master-builder.</p>
+                                    <div class="link"><a href="{% url 'zero_waste' %}"><span></span>More Details</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="more-text text-center"><p>We Provide Superior Value, Service & Effort. <a href="{% url 'services' %}">All Services.</a></p></div>
+            </div>
+        </section>
+        <!-- service-section end -->
+
+
+        <!-- chooseus-section -->
+        <section class="chooseus-section">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                        <div class="image-box">
+                            <div class="block-title text-right">
+                                <p><span>Why Choose Us</span></p>
+                                <h2>Reasons For Choosing Our Service</h2>
+                            </div>
+                            <figure class="image"><img src="{% static 'assets/images/resources/chooseus-1.png" alt=""></figure>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                        <div class="content-box">
+                            <div class="row clearfix">
+                                <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                    <div class="item wow fadeInLeft animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                        <div class="career-benefit__single">
+                                            <i class="wastey-icon-42"></i>
+                                            <h3><a href="#">Healthy Catered <br> Foods</a></h3>
+                                            <p>Indignation and dislike men who are so beguiled.</p>
+                                        </div><!-- /.career-benefit__single -->
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                    <div class="item wow fadeInRight animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                        <div class="career-benefit__single">
+                                            <i class="wastey-icon-43"></i>
+                                            <h3><a href="#">Comprehensive <br> Insurance</a></h3>
+                                            <p>Charms pleasure of the moment so blinded by desire.</p>
+                                        </div><!-- /.career-benefit__single -->
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                    <div class="item wow fadeInLeft animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                        <div class="career-benefit__single">
+                                            <i class="wastey-icon-44"></i>
+                                            <h3><a href="#">Flexible Work <br> Hours</a></h3>
+                                            <p>Cannot forese the pain & trouble that are bound to ensue.</p>
+                                        </div><!-- /.career-benefit__single -->
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                    <div class="item wow fadeInRight animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                        <div class="career-benefit__single">
+                                            <i class="wastey-icon-45"></i>
+                                            <h3><a href="#">Offsites, Games <br> Socializing</a></h3>
+                                            <p>Equal blame belongs those who fail in their duty.</p>
+                                        </div><!-- /.career-benefit__single -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- chooseus-section -->
+
+
+        <section class="feature-one">
+            <div class="feature-one__bg-1" style="background-image: url(assets/images/resources/feature-bg-1-1.jpg);">
+                <svg viewbox="0 0 10 2">
+                    <text x="5" y="1" text-anchor="middle" font-size="1" fill="none" stroke-width=".015" stroke="#fff"
+                        font-weight="700" font-family="Public Sans">RESPONSIBILITY</text>
+                </svg>
+            </div><!-- /.feature-one__bg-1 -->
+            <div class="feature-one__bg-2" style="background-image: url(assets/images/resources/feature-bg-1-2.jpg);">
+                <svg viewbox="0 0 10 2">
+                    <text x="5" y="1" text-anchor="middle" font-size="1" fill="none" stroke-width=".015" stroke="#fff"
+                        font-weight="700" font-family="Public Sans">SAFETY FIRST</text>
+                </svg>
+            </div><!-- /.feature-one__bg-2 -->
+            <div class="container">
+                <div class="row high-gutters">
+                    <div class="col-lg-6">
+                        <div class="feature-one__single">
+                            <div class="feature-one__icon">
+                                <i class="wastey-icon-46"></i>
+                            </div><!-- /.feature-one__icon -->
+                            <div class="feature-one__content">
+                                <span>Responsibility</span>
+                                <h3>Corporate Responsibility</h3>
+                                <p>To take a trivial example, which undertakes laborious physical exercise.</p>
+                            </div><!-- /.feature-one__content -->
+                        </div><!-- /.feature-one__single -->
+                    </div><!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                        <div class="feature-one__single">
+                            <div class="feature-one__icon">
+                                <i class="wastey-icon-47"></i>
+                            </div><!-- /.feature-one__icon -->
+                            <div class="feature-one__content">
+                                <span>Safety First</span>
+                                <h3>Safety is Our First Priority</h3>
+                                <p>Any right to find fault with man who chooses a pleasure that annoying.</p>
+                            </div><!-- /.feature-one__content -->
+                        </div><!-- /.feature-one__single -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row high-gutters -->
+            </div><!-- /.container -->
+        </section><!-- /.feature-one -->
+
+        
+        <!-- case-section -->
+        <section class="case-section">
+            <div class="container">
+                <div class="title-inner">
+                    <div class="block-title">
+                        <p><span>Case Studies</span></p>
+                        <h2>Good & Unique Practices</h2>
+                    </div>
+                    <div class="more-link">
+                        <a href="case-2.html">More Case Stduies <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+                <div class="case__carousel thm__owl-carousel carousel__dot-one owl-theme owl-carousel"
+                    data-carousel-next-btn=".career-benefit__carousel-nav__right"
+                    data-carousel-prev-btn=".career-benefit__carousel-nav__left" data-options='{
+                    "items": 3, "margin": 30, "loop": true, "autoplay": true, "autoplayHoverPause": true, "autoplayTimeout": 5000, "nav": false, "dots": true, "responsive": {
+                        "0": {
+                            "margin": 0,
+                            "items": 1
+                        },
+                        "480": {
+                            "margin": 0,
+                            "items": 1
+                        },
+                        "767": {
+                            "margin": 30,
+                            "items": 2
+                        },
+                        "1199": {
+                            "margin": 30,
+                            "items": 3
+                        },
+                        "1200": {
+                            "margin": 30,
+                            "items": 3
+                        }
+                    }
+                }'>
+                    <div class="case-two__single">
+                        <div class="case-two__image"
+                            style="background-image: url(assets/images/case/case-2-1.jpg);">
+                        </div><!-- /.case-two__image -->
+                        <div class="case-two__content">
+                            <a href="case-details.html" class="case-two__more-link"><i
+                                    class="far fa-angle-right"></i></a>
+                            <div class="case-two__meta">
+                                <a href="case-details.html">Government</a>
+                            </div><!-- /.case-two__meta -->
+                            <h3><a href="case-details.html">Material Recovery</a></h3>
+                        </div><!-- /.case-two__content -->
+                    </div>
+                    <div class="case-two__single">
+                        <div class="case-two__image"
+                            style="background-image: url(assets/images/case/case-2-2.jpg);">
+                        </div><!-- /.case-two__image -->
+
+                        <div class="case-two__content">
+                            <a href="case-details.html" class="case-two__more-link"><i
+                                    class="far fa-angle-right"></i></a>
+                            <div class="case-two__meta">
+                                <a href="case-details.html">Education</a>
+                            </div><!-- /.case-two__meta -->
+                            <h3><a href="case-details.html">Stanford University</a></h3>
+
+                        </div><!-- /.case-two__content -->
+                    </div>
+                    <div class="case-two__single">
+                        <div class="case-two__image"
+                            style="background-image: url(assets/images/case/case-2-4.jpg);">
+                        </div><!-- /.case-two__image -->
+
+                        <div class="case-two__content">
+                            <a href="case-details.html" class="case-two__more-link"><i
+                                    class="far fa-angle-right"></i></a>
+                            <div class="case-two__meta">
+                                <a href="case-details.html">Construction</a>
+                            </div><!-- /.case-two__meta -->
+                            <h3><a href="case-details.html">Urban Cleaning</a></h3>
+
+                        </div><!-- /.case-two__content -->
+                    </div>
+                    <div class="case-two__single">
+                        <div class="case-two__image"
+                            style="background-image: url(assets/images/case/case-2-1.jpg);">
+                        </div><!-- /.case-two__image -->
+                        <div class="case-two__content">
+                            <a href="case-details.html" class="case-two__more-link"><i
+                                    class="far fa-angle-right"></i></a>
+                            <div class="case-two__meta">
+                                <a href="case-details.html">Government</a>
+                            </div><!-- /.case-two__meta -->
+                            <h3><a href="case-details.html">Material Recovery</a></h3>
+                        </div><!-- /.case-two__content -->
+                    </div>
+                    <div class="case-two__single">
+                        <div class="case-two__image"
+                            style="background-image: url(assets/images/case/case-2-2.jpg);">
+                        </div><!-- /.case-two__image -->
+
+                        <div class="case-two__content">
+                            <a href="case-details.html" class="case-two__more-link"><i
+                                    class="far fa-angle-right"></i></a>
+                            <div class="case-two__meta">
+                                <a href="case-details.html">Education</a>
+                            </div><!-- /.case-two__meta -->
+                            <h3><a href="case-details.html">Stanford University</a></h3>
+
+                        </div><!-- /.case-two__content -->
+                    </div>
+                    <div class="case-two__single">
+                        <div class="case-two__image"
+                            style="background-image: url(assets/images/case/case-2-4.jpg);">
+                        </div><!-- /.case-two__image -->
+
+                        <div class="case-two__content">
+                            <a href="case-details.html" class="case-two__more-link"><i
+                                    class="far fa-angle-right"></i></a>
+                            <div class="case-two__meta">
+                                <a href="case-details.html">Construction</a>
+                            </div><!-- /.case-two__meta -->
+                            <h3><a href="case-details.html">Urban Cleaning</a></h3>
+
+                        </div><!-- /.case-two__content -->
+                    </div>
+                    <div class="case-two__single">
+                        <div class="case-two__image"
+                            style="background-image: url(assets/images/case/case-2-1.jpg);">
+                        </div><!-- /.case-two__image -->
+                        <div class="case-two__content">
+                            <a href="case-details.html" class="case-two__more-link"><i
+                                    class="far fa-angle-right"></i></a>
+                            <div class="case-two__meta">
+                                <a href="case-details.html">Government</a>
+                            </div><!-- /.case-two__meta -->
+                            <h3><a href="case-details.html">Material Recovery</a></h3>
+                        </div><!-- /.case-two__content -->
+                    </div>
+                    <div class="case-two__single">
+                        <div class="case-two__image"
+                            style="background-image: url(assets/images/case/case-2-2.jpg);">
+                        </div><!-- /.case-two__image -->
+
+                        <div class="case-two__content">
+                            <a href="case-details.html" class="case-two__more-link"><i
+                                    class="far fa-angle-right"></i></a>
+                            <div class="case-two__meta">
+                                <a href="case-details.html">Education</a>
+                            </div><!-- /.case-two__meta -->
+                            <h3><a href="case-details.html">Stanford University</a></h3>
+
+                        </div><!-- /.case-two__content -->
+                    </div>
+                    <div class="case-two__single">
+                        <div class="case-two__image"
+                            style="background-image: url(assets/images/case/case-2-4.jpg);">
+                        </div><!-- /.case-two__image -->
+
+                        <div class="case-two__content">
+                            <a href="case-details.html" class="case-two__more-link"><i
+                                    class="far fa-angle-right"></i></a>
+                            <div class="case-two__meta">
+                                <a href="case-details.html">Construction</a>
+                            </div><!-- /.case-two__meta -->
+                            <h3><a href="case-details.html">Urban Cleaning</a></h3>
+
+                        </div><!-- /.case-two__content -->
+                    </div>
+                    <div class="case-two__single">
+                        <div class="case-two__image"
+                            style="background-image: url(assets/images/case/case-2-1.jpg);">
+                        </div><!-- /.case-two__image -->
+                        <div class="case-two__content">
+                            <a href="case-details.html" class="case-two__more-link"><i
+                                    class="far fa-angle-right"></i></a>
+                            <div class="case-two__meta">
+                                <a href="case-details.html">Government</a>
+                            </div><!-- /.case-two__meta -->
+                            <h3><a href="case-details.html">Material Recovery</a></h3>
+                        </div><!-- /.case-two__content -->
+                    </div>
+                    <div class="case-two__single">
+                        <div class="case-two__image"
+                            style="background-image: url(assets/images/case/case-2-2.jpg);">
+                        </div><!-- /.case-two__image -->
+
+                        <div class="case-two__content">
+                            <a href="case-details.html" class="case-two__more-link"><i
+                                    class="far fa-angle-right"></i></a>
+                            <div class="case-two__meta">
+                                <a href="case-details.html">Education</a>
+                            </div><!-- /.case-two__meta -->
+                            <h3><a href="case-details.html">Stanford University</a></h3>
+
+                        </div><!-- /.case-two__content -->
+                    </div>
+                    <div class="case-two__single">
+                        <div class="case-two__image"
+                            style="background-image: url(assets/images/case/case-2-4.jpg);">
+                        </div><!-- /.case-two__image -->
+
+                        <div class="case-two__content">
+                            <a href="case-details.html" class="case-two__more-link"><i
+                                    class="far fa-angle-right"></i></a>
+                            <div class="case-two__meta">
+                                <a href="case-details.html">Construction</a>
+                            </div><!-- /.case-two__meta -->
+                            <h3><a href="case-details.html">Urban Cleaning</a></h3>
+
+                        </div><!-- /.case-two__content -->
+                    </div>
+                </div>
+            </div><!-- /.container -->
+        </section>
+        <!-- case-section end -->
+
+        
+        <!-- team-three -->
+        <section class="team-three alternat-2">
+            <div class="image-layer" style="background-image: url(assets/images/backgrounds/team-1.jpg);"></div>
+            <div class="container">
+                <div class="block-title text-center light">
+                    <p><span>Meet Our Team</span></p>
+                    <h2>Our Leadership Team</h2>
+                </div>
+                <div class="team-three__carousel owl-carousel owl-theme thm__owl-carousel" data-carousel-prev-btn=".team-three__carousel-nav-left" data-carousel-next-btn=".team-three__carousel-nav-right" data-options='{
+                    "nav": false, "dots": false,
+                    "items": 3, "margin": 0, "center": true, "loop": true, "autoplay": true, "autoplayTimeout": 5000, "autoplayHoverPause": true, "responsive": {
+                        "0": {
+                            "items": 1
+                        },
+                        "480": {
+                            "items": 1
+                        },
+                        "991": {
+                            "items": 1
+                        },
+                        "1199": {
+                            "items": 3
+                        }
+                    }
+                }'>
+                    <div class="item">
+                        <div class="team-three__item">
+                            <div class="team-three__image">
+                                <div class="team-three__social">
+                                    <span><i class="wastey-icon-35"></i></span>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div><!-- /.team-three__social -->
+                                <img src="assets/images/team/team-c-1-1.png" alt="">
+                                <div class="team-three__meta">
+                                    <h3>Devina A. Rankin</h3>
+                                    <p>Vice President</p>
+                                </div><!-- /.team-three__meta -->
+                            </div><!-- /.team-three__image -->
+                            <div class="team-three__content">
+                                <p>Expound the actual teachings of the great explorer of the truth, the master-builder
+                                    of human happiness.</p>
+                            </div><!-- /.team-three__content -->
+                        </div><!-- /.team-three__item -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="team-three__item">
+                            <div class="team-three__image">
+                                <div class="team-three__social">
+                                    <span><i class="wastey-icon-35"></i></span>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div><!-- /.team-three__social -->
+                                <img src="assets/images/team/team-c-1-2.png" alt="">
+                                <div class="team-three__meta">
+                                    <h3>Steven R. Batchelor</h3>
+                                    <p>Chief Legal Officer</p>
+                                </div><!-- /.team-three__meta -->
+                            </div><!-- /.team-three__image -->
+                            <div class="team-three__content">
+                                <p>Expound the actual teachings of the great explorer of the truth, the master-builder
+                                    of human happiness.</p>
+                            </div><!-- /.team-three__content -->
+                        </div><!-- /.team-three__item -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="team-three__item">
+                            <div class="team-three__image">
+                                <div class="team-three__social">
+                                    <span><i class="wastey-icon-35"></i></span>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div><!-- /.team-three__social -->
+                                <img src="assets/images/team/team-c-1-3.png" alt="">
+                                <div class="team-three__meta">
+                                    <h3>Nikolas H. Batchelor</h3>
+                                    <p>Senior Vice President</p>
+                                </div><!-- /.team-three__meta -->
+                            </div><!-- /.team-three__image -->
+                            <div class="team-three__content">
+                                <p>Expound the actual teachings of the great explorer of the truth, the master-builder
+                                    of human happiness.</p>
+                            </div><!-- /.team-three__content -->
+                        </div><!-- /.team-three__item -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="team-three__item">
+                            <div class="team-three__image">
+                                <div class="team-three__social">
+                                    <span><i class="wastey-icon-35"></i></span>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div><!-- /.team-three__social -->
+                                <img src="assets/images/team/team-c-1-1.png" alt="">
+                                <div class="team-three__meta">
+                                    <h3>Devina A. Rankin</h3>
+                                    <p>Vice President</p>
+                                </div><!-- /.team-three__meta -->
+                            </div><!-- /.team-three__image -->
+                            <div class="team-three__content">
+                                <p>Expound the actual teachings of the great explorer of the truth, the master-builder
+                                    of human happiness.</p>
+                            </div><!-- /.team-three__content -->
+                        </div><!-- /.team-three__item -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="team-three__item">
+                            <div class="team-three__image">
+                                <div class="team-three__social">
+                                    <span><i class="wastey-icon-35"></i></span>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div><!-- /.team-three__social -->
+                                <img src="assets/images/team/team-c-1-2.png" alt="">
+                                <div class="team-three__meta">
+                                    <h3>Steven R. Batchelor</h3>
+                                    <p>Chief Legal Officer</p>
+                                </div><!-- /.team-three__meta -->
+                            </div><!-- /.team-three__image -->
+                            <div class="team-three__content">
+                                <p>Expound the actual teachings of the great explorer of the truth, the master-builder
+                                    of human happiness.</p>
+                            </div><!-- /.team-three__content -->
+                        </div><!-- /.team-three__item -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="team-three__item">
+                            <div class="team-three__image">
+                                <div class="team-three__social">
+                                    <span><i class="wastey-icon-35"></i></span>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div><!-- /.team-three__social -->
+                                <img src="assets/images/team/team-c-1-3.png" alt="">
+                                <div class="team-three__meta">
+                                    <h3>Nikolas H. Batchelor</h3>
+                                    <p>Senior Vice President</p>
+                                </div><!-- /.team-three__meta -->
+                            </div><!-- /.team-three__image -->
+                            <div class="team-three__content">
+                                <p>Expound the actual teachings of the great explorer of the truth, the master-builder
+                                    of human happiness.</p>
+                            </div><!-- /.team-three__content -->
+                        </div><!-- /.team-three__item -->
+                    </div><!-- /.item -->
+                </div><!-- /.team-three__carousel owl-carousel owl-theme thm__owl-carousel -->
+                <div class="team-three__carousel-nav">
+                    <a href="#" class="team-three__carousel-nav-left">
+                        <i class="fa fa-angle-left"></i>
+                        Prev
+                    </a><!-- /.team-three__carousel-nav-left -->
+                    <a href="#" class="team-three__carousel-nav-right">
+                        <i class="fa fa-angle-right"></i>
+                        Next
+                    </a><!-- /.team-three__carousel-nav-right -->
+                </div><!-- /.team-three__carousel-nav -->
+            </div><!-- /.container -->
+        </section><!-- /.team-three -->
+
+
+        <!-- funfact-section -->
+        <section class="funfact-section alternat-2 text-center">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-lg-3 col-md-6 col-sm-12 counter-block">
+                        <div class="counter-block-one wow slideInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500" data-stop="7">0</span><span>m</span>
+                            </div>
+                            <h3>Waste Recycled</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 counter-block">
+                        <div class="counter-block-one wow slideInUp animated animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500" data-stop="158">0</span>
+                            </div>
+                            <h3>Expert Workers</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 counter-block">
+                        <div class="counter-block-one wow slideInUp animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500" data-stop="32">0</span>
+                            </div>
+                            <h3>Industries Served</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-12 counter-block">
+                        <div class="counter-block-one wow slideInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500" data-stop="4.9">0</span>k<span></span>
+                            </div>
+                            <h3>People Benefited</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- funfact-section end -->
+
+
+        <!-- process-style-two -->
+        <section class="process-style-two">
+            <div class="container">
+                <div class="title-inner text-center">
+                    <div class="block-title">
+                        <p><span>How It’s Work</span></p>
+                        <h2>Our Working Process</h2>
+                    </div>
+                    <div class="text">
+                        <p>The point of using lorem ipsum is that it has a more-or-less normal distribution of letters, as opposed <br />using Content here, content here making it look like readable.</p>
+                    </div>
+                </div>
+                <div class="border-box">
+                    <div class="icon icon-1"><i class="wastey-icon-48"></i></div>
+                    <div class="icon icon-2"><i class="wastey-icon-51"></i></div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-4 col-md-6 col-sm-12 single-block">
+                        <div class="single-item">
+                            <div class="inner-box">
+                                <div class="arrow-icon"><i class="wastey-icon-37"></i></div>
+                                <div class="icon-box"><i class="wastey-icon-49"></i></div>
+                                <div class="content-box">
+                                    <span class="count-text">1</span>
+                                    <h3>Waste Assessing</h3>
+                                    <p>Ever underta laborious physical exercise, excepts obtains some advantage from it right.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 single-block">
+                        <div class="single-item">
+                            <div class="inner-box">
+                                <div class="arrow-icon"><i class="wastey-icon-37"></i></div>
+                                <div class="icon-box"><i class="wastey-icon-36"></i></div>
+                                <div class="content-box">
+                                    <span class="count-text">2</span>
+                                    <h3>Waste Collection</h3>
+                                    <p>Indignation and dislike men who so beguileds demoralized by the pleasure of the moment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 single-block">
+                        <div class="single-item">
+                            <div class="inner-box">
+                                <div class="icon-box"><i class="wastey-icon-50"></i></div>
+                                <div class="content-box">
+                                    <span class="count-text">3</span>
+                                    <h3>Waste Processing</h3>
+                                    <p>These case are perfectly simple to distinguish in free hours when power choice untrammelled.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- process-style-two -->
+
+
+        <section class="brand-one alternat-2 bg-color-3">
+            <div class="container">
+                <div class="owl-theme owl-carousel thm__owl-carousel owl-dots-none" data-options='{
+                    "dots": false, "items": 5, "margin": 75, "autoPlay": true, "autoplayHoverPause": true, "dots": true, "autoplayTimeout": 5000, "smartSpeed": 700, "responsive": {
+                        "0": {
+                            "items": 1,
+                            "margin": 0
+                        },
+                        "375": {
+                            "items": 1,
+                            "margin": 0
+                        },
+                        "480": {
+                            "items": 2,
+                            "margin": 30
+                        },
+                        "767": {
+                            "items": 3,
+                            "margin": 30
+                        },
+                        "991": {
+                            "items": 5,
+                            "margin": 75
+                        }
+                    }
+                }'>
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-1.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-2.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-3.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-4.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-5.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-1.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-2.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-3.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-4.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-5.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-1.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-2.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-3.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-4.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-5.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-1.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-2.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-3.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-4.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="brand-one__box">
+                            <img src="{% static 'assets/images/brand/brand-2-5.png" alt="">
+                        </div><!-- /.brand-one__box -->
+                    </div><!-- /.item -->
+                </div><!-- /.owl-theme owl-carousel thm__owl-carousel -->
+            </div><!-- /.container -->
+        </section><!-- /.brand-one -->
+
+
+        <!-- testimonial-section -->
+        <section class="testimonial-section bg-color-1 text-center">
+            <div class="container">
+                <div class="block-title">
+                    <p><span>Testimonials</span></p>
+                    <h2>Words From Customers</h2>
+                </div>
+                <div class="ttestimonial__carousel thm__owl-carousel owl-dots-none owl-theme owl-carousel"
+                    data-carousel-next-btn=".career-benefit__carousel-nav__right"
+                    data-carousel-prev-btn=".career-benefit__carousel-nav__left" data-options='{
+                    "items": 3, "margin": 30, "loop": true, "autoplay": true, "autoplayHoverPause": true, "autoplayTimeout": 5000, "nav": false, "dots": true, "responsive": {
+                        "0": {
+                            "margin": 0,
+                            "items": 1
+                        },
+                        "480": {
+                            "margin": 0,
+                            "items": 1
+                        },
+                        "767": {
+                            "margin": 30,
+                            "items": 2
+                        },
+                        "1199": {
+                            "margin": 30,
+                            "items": 3
+                        },
+                        "1200": {
+                            "margin": 30,
+                            "items": 3
+                        }
+                    }
+                }'>
+                    <div class="testimonial-block-one">
+                        <div class="inner-box">
+                            <div class="upper-box">
+                                <figure class="image-box"><img src="{% static 'assets/images/resources/testimonail-1.png" alt=""></figure>
+                                <ul class="rating">
+                                    <li><i class="wastey-icon-52"></i></li>
+                                    <li><i class="wastey-icon-52"></i></li>
+                                    <li><i class="wastey-icon-52"></i></li>
+                                    <li><i class="wastey-icon-52"></i></li>
+                                    <li><i class="wastey-icon-52"></i></li>
+                                </ul>
+                                <p>Experience with wastey was fantastic and we would absolutely recommend the wastey to our friends & relative.</p>
+                                <div class="quote-box"><i class="wastey-icon-53"></i></div>
+                            </div>
+                            <div class="author-info">
+                                <h3>Reggie Michael</h3>
+                                <span class="designation">Los Angeles</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-block-one">
+                        <div class="inner-box">
+                            <div class="upper-box">
+                                <figure class="image-box"><img src="{% static 'assets/images/resources/testimonail-2.png" alt=""></figure>
+                                <ul class="rating">
+                                    <li><i class="wastey-icon-52"></i></li>
+                                    <li><i class="wastey-icon-52"></i></li>
+                                    <li><i class="wastey-icon-52"></i></li>
+                                    <li><i class="wastey-icon-52"></i></li>
+                                    <li><i class="wastey-icon-52"></i></li>
+                                </ul>
+                                <p>Experience with wastey was fantastic and we would absolutely recommend the wastey to our friends & relative.</p>
+                                <div class="quote-box"><i class="wastey-icon-53"></i></div>
+                            </div>
+                            <div class="author-info">
+                                <h3>Bertram Ford</h3>
+                                <span class="designation">California</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-block-one">
+                        <div class="inner-box">
+                            <div class="upper-box">
+                                <figure class="image-box"><img src="{% static 'assets/images/resources/testimonail-3.png" alt=""></figure>
+                                <ul class="rating">
+                                    <li><i class="wastey-icon-52"></i></li>
+                                    <li><i class="wastey-icon-52"></i></li>
+                                    <li><i class="wastey-icon-52"></i></li>
+                                    <li><i class="wastey-icon-52"></i></li>
+                                    <li><i class="wastey-icon-52"></i></li>
+                                </ul>
+                                <p>Experience with wastey was fantastic and we would absolutely recommend the wastey to our friends & relative.</p>
+                                <div class="quote-box"><i class="wastey-icon-53"></i></div>
+                            </div>
+                            <div class="author-info">
+                                <h3>Grant Lester</h3>
+                                <span class="designation">Los Angeles</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- testimonial-section end -->
+
+
+        <!-- our-locations -->
+        <section class="our-locations">
+            <figure class="image-layer"><img src="{% static 'assets/images/resources/cleaner-1.jpg" alt=""></figure>
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-lg-6 col-md-12 col-sm-12 inner-column">
+                        <div class="inner-box">
+                            <div class="block-title">
+                                <p><span>Our Locations</span></p>
+                                <h2>Find Your Nearest Hub</h2>
+                            </div>
+                            <div class="location-inner">
+                                <div class="pattern-layer" style="background-image: url(assets/images/shapes/shape-4.png);"></div>
+                                <div class="single-location-box location-1">
+                                    <span class="dots"></span>
+                                    <div class="text">
+                                        <h5>Colorado</h5>
+                                        <p>231 Main Street, Suite 211</p>
+                                    </div>
+                                </div>
+                                <div class="single-location-box location-2 active">
+                                    <span class="dots"></span>
+                                    <div class="text">
+                                        <h5>Colorado</h5>
+                                        <p>231 Main Street, Suite 211</p>
+                                    </div>
+                                </div>
+                                <div class="single-location-box location-3">
+                                    <span class="dots"></span>
+                                    <div class="text">
+                                        <h5>Colorado</h5>
+                                        <p>231 Main Street, Suite 211</p>
+                                    </div>
+                                </div>
+                                <div class="single-location-box location-4">
+                                    <span class="dots"></span>
+                                    <div class="text">
+                                        <h5>Colorado</h5>
+                                        <p>231 Main Street, Suite 211</p>
+                                    </div>
+                                </div>
+                                <div class="single-location-box location-5">
+                                    <span class="dots"></span>
+                                    <div class="text">
+                                        <h5>Colorado</h5>
+                                        <p>231 Main Street, Suite 211</p>
+                                    </div>
+                                </div>
+                                <div class="single-location-box location-6">
+                                    <span class="dots"></span>
+                                    <div class="text">
+                                        <h5>Colorado</h5>
+                                        <p>231 Main Street, Suite 211</p>
+                                    </div>
+                                </div>
+                                <div class="single-location-box location-7">
+                                    <span class="dots"></span>
+                                    <div class="text">
+                                        <h5>Colorado</h5>
+                                        <p>231 Main Street, Suite 211</p>
+                                    </div>
+                                </div>
+                                <div class="single-location-box location-8">
+                                    <span class="dots"></span>
+                                    <div class="text">
+                                        <h5>Colorado</h5>
+                                        <p>231 Main Street, Suite 211</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 form-column">
+                        <div class="form-inner">
+                            <form action="assets/inc/sendemail.php"
+                            class="wow fadeInLeft contact-one__form contact-form-validated" data-wow-duration="1500ms">
+                                <div class="contact-one__form-inner">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <input type="text" name="name" placeholder="Your Name *">
+                                        </div><!-- /.col-md-12 -->
+                                        <div class="col-lg-6">
+                                            <input type="text" name="email" placeholder="Email *">
+                                        </div><!-- /.col-md-6 -->
+                                        <div class="col-lg-6">
+                                            <input type="text" name="phone" placeholder="Phone">
+                                        </div><!-- /.col-md-6 -->
+                                        <div class="col-lg-12">
+                                            <input type="text" name="subject" placeholder="Subject">
+                                        </div><!-- /.col-md-12 -->
+                                        <div class="col-lg-12">
+                                            <textarea name="message" placeholder="Write Message ..."></textarea>
+                                        </div><!-- /.col-lg-12 -->
+                                        <div class="col-lg-12">
+                                            <button type="submit" class="thm-btn">Send Message</button>
+                                        </div><!-- /.col-lg-12 -->
+                                    </div><!-- /.row -->
+                                </div><!-- /.contact-one__form-inner -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- our-locations end -->
+
+
+        <section class="blog-grid blog-grid__home bg-color-1">
+            <div class="container">
+                <div class="block-title text-center">
+                    <p><span>News & Resources</span></p>
+                    <h2>Read Our Latest News</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="blog-two__single mb-0">
+                            <div class="blog-two__image">
+                                <img src="{% static 'assets/images/blog/blog-2-1.jpg" alt="">
+                                <a href="blog-details.html"><i class="wastey-icon-80"></i></a>
+                                <a href="blog-details.html" class="blog-two__more-link">Read More</a>
+                            </div><!-- /.blog-two__image -->
+                            <div class="blog-two__content">
+                                <div class="blog-one__category">IN: <a href="#">Garbage Removal</a></div>
+                                <!-- /.blog-one__category -->
+                                <h3><a href="blog-details.html">Got Junk? Time For Dumpster
+                                    Rental in Scrapy.</a>
+                                </h3>
+                                <div class="blog-two__meta">
+                                    <a href="#"><i class="far fa-calendar-alt"></i>10.05.2021</a>
+                                    <a href="#"><i class="far fa-user"></i>By Archer Corvin</a>
+                                </div><!-- /.blog-two__meta -->
+                            </div><!-- /.blog-two__content -->
+                        </div><!-- /.blog-two__single -->
+                    </div><!-- /.col-lg-4 col-md-6 col-sm-12 -->
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="blog-two__single mb-0">
+                            <div class="blog-two__image">
+                                <img src="{% static 'assets/images/blog/blog-2-2.jpg' %}" alt="">
+                                <a href="blog-details.html"><i class="wastey-icon-80"></i></a>
+                                <a href="blog-details.html" class="blog-two__more-link">Read More</a>
+                            </div><!-- /.blog-two__image -->
+                            <div class="blog-two__content">
+                                <div class="blog-one__category">IN: <a href="#">Garbage Removal</a></div>
+                                <!-- /.blog-one__category -->
+                                <h3><a href="blog-details.html">Can You Still Get Large Trash Pickup? Yes, You Can!</a>
+                                </h3>
+                                <div class="blog-two__meta">
+                                    <a href="#"><i class="far fa-calendar-alt"></i>10.05.2021</a>
+                                    <a href="#"><i class="far fa-user"></i>By Archer Corvin</a>
+                                </div><!-- /.blog-two__meta -->
+                            </div><!-- /.blog-two__content -->
+                        </div><!-- /.blog-two__single -->
+                    </div><!-- /.col-lg-4 col-md-6 col-sm-12 -->
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="blog-two__single mb-0">
+                            <div class="blog-two__image">
+                                <img src="{% static 'assets/images/blog/blog-2-3.jpg" alt="">
+                                <a href="blog-details.html"><i class="wastey-icon-80"></i></a>
+                                <a href="blog-details.html" class="blog-two__more-link">Read More</a>
+                            </div><!-- /.blog-two__image -->
+                            <div class="blog-two__content">
+                                <div class="blog-one__category">IN: <a href="#">Garbage Removal</a></div>
+                                <!-- /.blog-one__category -->
+                                <h3><a href="blog-details.html">What Does the NY Plastic Bag
+                                    Ban Mean for You?</a>
+                                </h3>
+                                <div class="blog-two__meta">
+                                    <a href="#"><i class="far fa-calendar-alt"></i>10.05.2021</a>
+                                    <a href="#"><i class="far fa-user"></i>By Archer Corvin</a>
+                                </div><!-- /.blog-two__meta -->
+                            </div><!-- /.blog-two__content -->
+                        </div><!-- /.blog-two__single -->
+                    </div><!-- /.col-lg-4 col-md-6 col-sm-12 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.blog-grid -->
+
+        
+        <!-- footer-style-two -->
+        <footer class="footer-style-two bg-color-2">
+            <div class="container">
+                <div class="footer-top">
+                    <div class="row clearfix">
+                        <div class="col-lg-6 col-md-12 col-sm-12 subscribe-column">
+                            <div class="subscribe-inner">
+                                <h3>Subscribe Our Newsletter</h3>
+                                <form action="contact.html" method="post" class="subscribe-form">
+                                    <div class="form-group">
+                                        <input type="email" name="email" placeholder="Email Address ..." required="">
+                                        <button type="submit" class="thm-btn">Subscribe Us</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12 social-column">
+                            <div class="social-inner text-right">
+                                <h3>Connect With Us</h3>
+                                <ul class="social-links clearfix">
+                                    <li><a href="index-2.html"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="index-2.html"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="index-2.html"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="index-2.html"><i class="fab fa-pinterest-p"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-section">
+                    <div class="row clearfix">
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="footer-widget logo-widget">
+                                <figure class="footer-logo"><a href="index-2.html"><img src="assets/images/logo-2-2.png" alt=""></a></figure>
+                                <ul class="info-list clearfix">
+                                    <li>Po box 12345 <br />654 Varick Str, BLN 11210</li>
+                                    <li>
+                                        <a href="tel:80045678901">+800 456 78 901</a><br />
+                                        <a href="mailto:info@example.com">info@example.com</a>
+                                    </li>
+                                    <li>Mon-Sat: 9.00am to 7.00pm <br />Sunday Closed</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="footer-widget links-widget">
+                                <h3 class="footer-widget__title">
+                                    <span>Our Services</span>
+                                </h3>
+                                <ul class="list-unstyled footer-widget__list">
+                                    <li><a href = "{% url 'waste_removal' %}">Recurring Waste Services</a></li>
+                                    <li><a href="{% url 'rent_dumpster' %}">Dumpster Rentals</a></li>
+                                    <li><a href="{% url 'on_demand' %}">On Demand Collection</a></li>
+                                    <li><a href="{% url 'technology' %}">Technology</a></li>
+                                    <li><a href="ser-d-sustain.html">Sustainability Programs</a></li>
+                                    <li><a href="{% url 'zero_waste' %}">Zero Waste</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="footer-widget post-widget">
+                                <h3 class="footer-widget__title">
+                                    <span>Popular Post</span>
+                                </h3>
+                                <div class="post-inner">
+                                    <div class="post">
+                                        <h5><a href="blog-details.html">Municipal Recycling & Waste Management</a></h5>
+                                        <span class="post-date"><i class="far fa-calendar-alt"></i>21.05.2021</span>
+                                    </div>
+                                    <div class="post">
+                                        <h5><a href="blog-details.html">Got Junk? Time For Dumpster Rental in Scrapy.</a></h5>
+                                        <span class="post-date"><i class="far fa-calendar-alt"></i>20.05.2021</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
+                            <div class="footer-widget gallery-widget">
+                                <h3 class="footer-widget__title">
+                                    <span>Our Gallery</span>
+                                </h3>
+                                <ul class="image-list clearfix">
+                                    <li>
+                                        <figure class="image"><a href="index-2.html"><img src="{% static 'assets/images/resources/footer-1.jpg" alt=""></a></figure>
+                                    </li>
+                                    <li>
+                                        <figure class="image"><a href="index-2.html"><img src="{% static 'assets/images/resources/footer-2.jpg" alt=""></a></figure>
+                                    </li>
+                                    <li>
+                                        <figure class="image"><a href="index-2.html"><img src="{% static 'assets/images/resources/footer-3.jpg" alt=""></a></figure>
+                                    </li>
+                                    <li>
+                                        <figure class="image"><a href="index-2.html"><img src="{% static 'assets/images/resources/footer-4.jpg" alt=""></a></figure>
+                                    </li>
+                                    <li>
+                                        <figure class="image"><a href="index-2.html"><img src="{% static 'assets/images/resources/footer-5.jpg" alt=""></a></figure>
+                                    </li>
+                                    <li>
+                                        <figure class="image"><a href="index-2.html"><img src="{% static 'assets/images/resources/footer-6.jpg" alt=""></a></figure>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer-style-two end -->
+
+        <div class="site-footer__bottom">
+            <div class="container">
+                <p>Copyright © 2021 All Rights Reserved by <a href="{% url 'home' %}">Scrapy.</a></p>
+                <ul class="list-unstyled site-footer__bottom-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms + Conditions</a></li>
+                </ul><!-- /.list-unstyled -->
+            </div><!-- /.container -->
+        </div><!-- /.site-footer__bottom -->
+
+    </div><!-- /.page-wrapper -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <div class="side-menu__block">
+
+        <a href="#" class="side-menu__toggler side-menu__close-btn"><i class="fa fa-times"></i>
+            <!-- /.fa fa-close --></a>
+
+        <div class="side-menu__block-overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-menu__block-overlay -->
+        <div class="side-menu__block-inner ">
+
+            <a href="{% url 'home' %}" class="side-menu__logo"><img src="assets/images/logo-1-2.png" alt=""></a>
+            <nav class="mobile-nav__container">
+                <!-- content is loading via js -->
+            </nav>
+            <p class="side-menu__block__copy">(c) 2021 <a href="#">Scrapy</a> - All rights reserved.</p>
+            <div class="side-menu__social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-google-plus"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            </div>
+        </div><!-- /.side-menu__block-inner -->
+    </div><!-- /.side-menu__block -->
+
+
+    <div class="side-content__block">
+        <div class="side-content__block-overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.side-content__block-overlay -->
+        <a href="#" class="wastey-icon-6 side-content__close"></a>
+        <div class="side-content__block-inner ">
+            <div class="side-content__top">
+                <a href="{% url 'home' %}">
+                    <img src="{% static 'assets/images/logo-1-1.png' %}" alt="">
+                </a>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                    looking.</p>
+                <a href="#" class="side-content__download">
+                    <i class="wastey-icon-73"></i>
+                    Company Profile
+                    <span>48 KB</span>
+                </a>
+            </div><!-- /.side-content__top -->
+            <div class="side-content__content">
+                <div class="side-content__title">
+                    <h3><span>Download App</span></h3>
+                </div><!-- /.side-content__title -->
+                <div class="side-content__app">
+                    <img src="assets/images/shapes/side-content-moc-1-1.png" alt="">
+                    <div class="side-content__app-btns">
+                        <a href="#" class="side-content__btn">Download</a><!-- /.side-content__btn -->
+                        <a href="#" class="side-content__btn">How It’s Work</a><!-- /.side-content__btn -->
+                    </div><!-- /.side-content__app-btns -->
+                </div><!-- /.side-content__app -->
+                <div class="side-content__social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-google-plus"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+                <p>Copyright © 2021 All Rights Reserved.</p>
+            </div><!-- /.side-content__content -->
+        </div><!-- /.side-content__block-inner -->
+    </div><!-- /.side-content__block -->
+
+    <div class="search-popup" style="display: none;">
+        <div class="search-popup__overlay custom-cursor__overlay">
+            <div class="cursor"></div>
+            <div class="cursor-follower"></div>
+        </div><!-- /.search-popup__overlay -->
+        <div class="search-popup__inner">
+            <form action="#" class="search-popup__form">
+                <input type="text" name="search" placeholder="Type here to Search....">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </div><!-- /.search-popup__inner -->
+    </div><!-- /.search-popup -->
+
+
+    <!-- plugins Scripts -->
+    <script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/TweenMax.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/appear.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.countTo.js' %}"></script>
+    <script src="{% static 'assets/js/theme.js' %}"></script>
+
+</body>
+
+</html>
